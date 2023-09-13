@@ -8,6 +8,7 @@ namespace XenoStars_Battle
     public partial class Form1 : Form
     {
         public SaveFile mainSave = new();
+        public SaveFile enemySave = new();
 
         public Form1()
         {
@@ -75,6 +76,9 @@ namespace XenoStars_Battle
             allies1.BeginUpdate();
             allies2.BeginUpdate();
             allies3.BeginUpdate();
+            allies1.SelectedIndex = 0;
+            allies2.SelectedIndex = 0;
+            allies3.SelectedIndex = 0;
             allies1.Items.Clear();
             allies2.Items.Clear();
             allies3.Items.Clear();
@@ -111,12 +115,30 @@ namespace XenoStars_Battle
         {
             if (numericParty.Value > 12)
             {
-                partyMeter.Value = 12;
+                partyMeter1.Value = 4;
+                partyMeter2.Value = 4;
+                partyMeter3.Value = 4;
                 partyOverflow.Value = Convert.ToUInt16(numericParty.Value) - 12;
+            }
+            else if (numericParty.Value > 8)
+            {
+                partyMeter1.Value = 4;
+                partyMeter2.Value = 4;
+                partyMeter3.Value = Convert.ToUInt16(numericParty.Value) - 8;
+                partyOverflow.Value = 0;
+            }
+            else if (numericParty.Value > 4)
+            {
+                partyMeter1.Value = 4;
+                partyMeter2.Value = Convert.ToUInt16(numericParty.Value) - 4;
+                partyMeter3.Value = 0;
+                partyOverflow.Value = 0;
             }
             else
             {
-                partyMeter.Value = Convert.ToUInt16(numericParty.Value);
+                partyMeter1.Value = Convert.ToUInt16(numericParty.Value);
+                partyMeter2.Value = 0;
+                partyMeter3.Value = 0;
                 partyOverflow.Value = 0;
             }
         }
@@ -291,7 +313,7 @@ namespace XenoStars_Battle
 
         private void Allies3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var currentPlayer = mainSave.Characters[allies1.SelectedIndex];
+            var currentPlayer = mainSave.Characters[allies3.SelectedIndex];
             var levelDouble = Convert.ToDouble(mainSave.Level);
             double multiplier = Math.Ceiling(((Math.Log10(levelDouble)) + (Math.Pow((levelDouble * 0.1), 2)) + 1) * 4) / 4;
 
@@ -378,7 +400,109 @@ namespace XenoStars_Battle
             monadoArtBar.Value = Convert.ToByte(monadoArtNumber.Value);
         }
 
+        private void LoadEnemy_Click(object sender, EventArgs e)
+        {
+            openEnemyDialog.ShowDialog();
+        }
 
+        private void OpenEnemyDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            var raw = File.ReadAllText(openFileDialog.FileName);
+            enemySave = JsonSerializer.Deserialize<SaveFile>(raw);
+        }
+
+        private void DamageCalculate_Click(object sender, EventArgs e)
+        {
+            Random random = new();
+
+            var attack = damageAttackDynamic.Value;
+            var multiplier = damageMultiplierDynamic.Value;
+            var defense = damageDefenseDynamic.Value;
+            var evasion = damageEvasionDynamic.Value;
+
+
+            if (random.Next(1, 21) > evasion)
+            {
+                attack *= multiplier;
+
+                if (random.Next(1, 5) == 4)
+                {
+                    attack *= 3;
+                }
+
+                attack -= defense;
+
+                damageDamageDynamic.Text = Convert.ToString(attack);
+            }
+            else
+            {
+                damageDamageDynamic.Text = "Miss!";
+            }
+        }
+
+        private void TurnsShuffle_Click(object sender, EventArgs e)
+        {
+            var random = new Random();
+            var characters = mainSave.Characters;
+            var playersList = new List<String>();
+            var players = "";
+
+            var enemiesList = new List<String>();
+            var enemies = "";
+
+            if (allies1.SelectedIndex > 0)
+            {
+                playersList.Add(characters[allies1.SelectedIndex].Name);
+            }
+            if (allies2.SelectedIndex > 0)
+            {
+                playersList.Add(characters[allies2.SelectedIndex].Name);
+            }
+            if (allies3.SelectedIndex > 0)
+            {
+                playersList.Add(characters[allies3.SelectedIndex].Name);
+            }
+
+            while (playersList.Count > 1)
+            {
+                var index = random.Next(0, playersList.Count);
+                players += playersList[index] + ", ";
+                playersList.RemoveAt(index);
+            }
+            if (playersList.Count == 1)
+            {
+                players += playersList[0];
+                playersList.RemoveAt(0);
+            }
+
+            if (players.Trim() == "")
+            {
+                turnsPlayers.Text = "No players selected";
+            }
+            else
+            {
+                turnsPlayers.Text = players;
+            }
+
+
+            enemiesList.Add("Enemy 1");
+            enemiesList.Add("Enemy 2");
+            enemiesList.Add("Enemy 3");
+
+            while (enemiesList.Count > 1)
+            {
+                var index = random.Next(0, enemiesList.Count);
+                enemies += enemiesList[index] + ", ";
+                enemiesList.RemoveAt(index);
+            }
+            if (enemiesList.Count == 1)
+            {
+                enemies += enemiesList[0];
+                enemiesList.RemoveAt(0);
+            }
+
+            turnsEnemies.Text = enemies;
+        }
     }
 
     public class SaveFile

@@ -137,18 +137,30 @@
             groupTension = new GroupBox();
             tableLayoutPanel11 = new TableLayoutPanel();
             tableLayoutPanel12 = new TableLayoutPanel();
-            partyMeter = new ProgressBar();
+            partyMeter3 = new ProgressBar();
+            partyMeter2 = new ProgressBar();
             partyOverflow = new ProgressBar();
+            partyMeter1 = new ProgressBar();
             numericParty = new NumericUpDown();
             tableLayoutPanel10 = new TableLayoutPanel();
-            groupEnemies = new GroupBox();
-            groupInventory = new GroupBox();
-            listInventory = new ListBox();
-            groupStats = new GroupBox();
-            statisticsLayout = new TableLayoutPanel();
             tableLayoutPanel7 = new TableLayoutPanel();
             openFileButton = new Button();
             fileReload = new Button();
+            groupEnemies = new GroupBox();
+            tableLayoutPanel27 = new TableLayoutPanel();
+            tableLayoutPanel28 = new TableLayoutPanel();
+            loadEnemy = new Button();
+            unloadEnemy = new Button();
+            tabEnemies = new TabControl();
+            tabBasicEnemies = new TabPage();
+            tableLayoutPanel29 = new TableLayoutPanel();
+            tabUnique = new TabPage();
+            tabMultipurpose = new TabControl();
+            tabGeneral = new TabPage();
+            tableLayoutPanel26 = new TableLayoutPanel();
+            groupInventory = new GroupBox();
+            listInventory = new ListBox();
+            groupStats = new GroupBox();
             tableLayoutPanel8 = new TableLayoutPanel();
             labelLevel = new Label();
             labelEXP = new Label();
@@ -162,6 +174,31 @@
             labelLocationDynamic = new Label();
             labelMoney = new Label();
             labelMoneyDynamic = new Label();
+            tabRNG = new TabPage();
+            tableLayoutPanel30 = new TableLayoutPanel();
+            combatGroupDamage = new GroupBox();
+            tableLayoutPanel32 = new TableLayoutPanel();
+            tableLayoutPanel33 = new TableLayoutPanel();
+            damageDamage = new Label();
+            damageDamageDynamic = new Label();
+            tableLayoutPanel34 = new TableLayoutPanel();
+            damageAttack = new Label();
+            damageMultiplier = new Label();
+            damageDefense = new Label();
+            damageEvasion = new Label();
+            damageAttackDynamic = new NumericUpDown();
+            damageMultiplierDynamic = new NumericUpDown();
+            damageEvasionDynamic = new NumericUpDown();
+            damageDefenseDynamic = new NumericUpDown();
+            damageCalculate = new Button();
+            tableLayoutPanel31 = new TableLayoutPanel();
+            groupTurns = new GroupBox();
+            tableLayoutPanel35 = new TableLayoutPanel();
+            turnsShuffle = new Button();
+            turnsPlayers = new Label();
+            turnsEnemies = new Label();
+            combatMisc = new GroupBox();
+            textMisc = new TextBox();
             tableLayoutPanel9 = new TableLayoutPanel();
             tableLayoutPanel16 = new TableLayoutPanel();
             turnCounter = new NumericUpDown();
@@ -173,6 +210,7 @@
             openFileDialog = new OpenFileDialog();
             tableLayoutPanel4 = new TableLayoutPanel();
             comboBox1 = new ComboBox();
+            openEnemyDialog = new OpenFileDialog();
             tableLayoutPanel1.SuspendLayout();
             alliesGroup.SuspendLayout();
             alliesLayout.SuspendLayout();
@@ -208,11 +246,32 @@
             tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericParty).BeginInit();
             tableLayoutPanel10.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            groupEnemies.SuspendLayout();
+            tableLayoutPanel27.SuspendLayout();
+            tableLayoutPanel28.SuspendLayout();
+            tabEnemies.SuspendLayout();
+            tabBasicEnemies.SuspendLayout();
+            tabMultipurpose.SuspendLayout();
+            tabGeneral.SuspendLayout();
+            tableLayoutPanel26.SuspendLayout();
             groupInventory.SuspendLayout();
             groupStats.SuspendLayout();
-            statisticsLayout.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
+            tabRNG.SuspendLayout();
+            tableLayoutPanel30.SuspendLayout();
+            combatGroupDamage.SuspendLayout();
+            tableLayoutPanel32.SuspendLayout();
+            tableLayoutPanel33.SuspendLayout();
+            tableLayoutPanel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)damageAttackDynamic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)damageMultiplierDynamic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)damageEvasionDynamic).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)damageDefenseDynamic).BeginInit();
+            tableLayoutPanel31.SuspendLayout();
+            groupTurns.SuspendLayout();
+            tableLayoutPanel35.SuspendLayout();
+            combatMisc.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
             tableLayoutPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)turnCounter).BeginInit();
@@ -253,6 +312,7 @@
             // 
             // alliesLayout
             // 
+            alliesLayout.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             alliesLayout.ColumnCount = 3;
             alliesLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             alliesLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
@@ -275,12 +335,12 @@
             tableLayoutPanel2.Controls.Add(allies1, 0, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel13, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Location = new Point(4, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(137, 472);
+            tableLayoutPanel2.Size = new Size(135, 470);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // allies1
@@ -290,7 +350,7 @@
             allies1.Items.AddRange(new object[] { "None", "Virent" });
             allies1.Location = new Point(3, 3);
             allies1.Name = "allies1";
-            allies1.Size = new Size(131, 23);
+            allies1.Size = new Size(129, 23);
             allies1.TabIndex = 0;
             allies1.SelectedIndexChanged += Allies1_SelectedIndexChanged;
             // 
@@ -308,7 +368,7 @@
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 180F));
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel13.Size = new Size(131, 437);
+            tableLayoutPanel13.Size = new Size(129, 435);
             tableLayoutPanel13.TabIndex = 1;
             // 
             // player1Arts
@@ -317,7 +377,7 @@
             player1Arts.Dock = DockStyle.Fill;
             player1Arts.Location = new Point(3, 183);
             player1Arts.Name = "player1Arts";
-            player1Arts.Size = new Size(125, 122);
+            player1Arts.Size = new Size(123, 121);
             player1Arts.TabIndex = 0;
             player1Arts.TabStop = false;
             player1Arts.Text = "Arts";
@@ -344,7 +404,7 @@
             tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel14.Size = new Size(119, 100);
+            tableLayoutPanel14.Size = new Size(117, 99);
             tableLayoutPanel14.TabIndex = 0;
             // 
             // player1Art1
@@ -354,7 +414,7 @@
             player1Art1.Dock = DockStyle.Fill;
             player1Art1.Location = new Point(4, 1);
             player1Art1.Name = "player1Art1";
-            player1Art1.Size = new Size(85, 23);
+            player1Art1.Size = new Size(83, 23);
             player1Art1.TabIndex = 0;
             player1Art1.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -365,7 +425,7 @@
             player1Art2.Dock = DockStyle.Fill;
             player1Art2.Location = new Point(4, 25);
             player1Art2.Name = "player1Art2";
-            player1Art2.Size = new Size(85, 23);
+            player1Art2.Size = new Size(83, 23);
             player1Art2.TabIndex = 1;
             player1Art2.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -373,7 +433,7 @@
             // 
             player1Art1Cost.AutoSize = true;
             player1Art1Cost.Dock = DockStyle.Fill;
-            player1Art1Cost.Location = new Point(96, 1);
+            player1Art1Cost.Location = new Point(94, 1);
             player1Art1Cost.Name = "player1Art1Cost";
             player1Art1Cost.Size = new Size(19, 23);
             player1Art1Cost.TabIndex = 2;
@@ -384,7 +444,7 @@
             // 
             player1Art2Cost.AutoSize = true;
             player1Art2Cost.Dock = DockStyle.Fill;
-            player1Art2Cost.Location = new Point(96, 25);
+            player1Art2Cost.Location = new Point(94, 25);
             player1Art2Cost.Name = "player1Art2Cost";
             player1Art2Cost.Size = new Size(19, 23);
             player1Art2Cost.TabIndex = 3;
@@ -398,7 +458,7 @@
             player1Art3.Dock = DockStyle.Fill;
             player1Art3.Location = new Point(4, 49);
             player1Art3.Name = "player1Art3";
-            player1Art3.Size = new Size(85, 23);
+            player1Art3.Size = new Size(83, 23);
             player1Art3.TabIndex = 4;
             player1Art3.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -406,7 +466,7 @@
             // 
             player1Art3Cost.AutoSize = true;
             player1Art3Cost.Dock = DockStyle.Fill;
-            player1Art3Cost.Location = new Point(96, 49);
+            player1Art3Cost.Location = new Point(94, 49);
             player1Art3Cost.Name = "player1Art3Cost";
             player1Art3Cost.Size = new Size(19, 23);
             player1Art3Cost.TabIndex = 5;
@@ -420,7 +480,7 @@
             player1Art4.Dock = DockStyle.Fill;
             player1Art4.Location = new Point(4, 73);
             player1Art4.Name = "player1Art4";
-            player1Art4.Size = new Size(85, 26);
+            player1Art4.Size = new Size(83, 25);
             player1Art4.TabIndex = 6;
             player1Art4.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -428,9 +488,9 @@
             // 
             player1Art4Cost.AutoSize = true;
             player1Art4Cost.Dock = DockStyle.Fill;
-            player1Art4Cost.Location = new Point(96, 73);
+            player1Art4Cost.Location = new Point(94, 73);
             player1Art4Cost.Name = "player1Art4Cost";
-            player1Art4Cost.Size = new Size(19, 26);
+            player1Art4Cost.Size = new Size(19, 25);
             player1Art4Cost.TabIndex = 7;
             player1Art4Cost.Text = "0";
             player1Art4Cost.TextAlign = ContentAlignment.MiddleLeft;
@@ -465,7 +525,7 @@
             tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
             tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
             tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2881641F));
-            tableLayoutPanel15.Size = new Size(125, 174);
+            tableLayoutPanel15.Size = new Size(123, 174);
             tableLayoutPanel15.TabIndex = 1;
             // 
             // player1Player
@@ -474,7 +534,7 @@
             player1Player.Dock = DockStyle.Fill;
             player1Player.Location = new Point(3, 0);
             player1Player.Name = "player1Player";
-            player1Player.Size = new Size(56, 24);
+            player1Player.Size = new Size(55, 24);
             player1Player.TabIndex = 0;
             player1Player.Text = "Player";
             player1Player.TextAlign = ContentAlignment.MiddleLeft;
@@ -485,7 +545,7 @@
             player1MaxHP.Dock = DockStyle.Fill;
             player1MaxHP.Location = new Point(3, 48);
             player1MaxHP.Name = "player1MaxHP";
-            player1MaxHP.Size = new Size(56, 24);
+            player1MaxHP.Size = new Size(55, 24);
             player1MaxHP.TabIndex = 1;
             player1MaxHP.Text = "Max HP";
             player1MaxHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -496,7 +556,7 @@
             player1MaxAP.Dock = DockStyle.Fill;
             player1MaxAP.Location = new Point(3, 96);
             player1MaxAP.Name = "player1MaxAP";
-            player1MaxAP.Size = new Size(56, 24);
+            player1MaxAP.Size = new Size(55, 24);
             player1MaxAP.TabIndex = 2;
             player1MaxAP.Text = "Max AP";
             player1MaxAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -507,18 +567,18 @@
             player1Damage.Dock = DockStyle.Fill;
             player1Damage.Location = new Point(3, 120);
             player1Damage.Name = "player1Damage";
-            player1Damage.Size = new Size(56, 24);
+            player1Damage.Size = new Size(55, 24);
             player1Damage.TabIndex = 3;
-            player1Damage.Text = "Damage";
+            player1Damage.Text = "Attack";
             player1Damage.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // player1PlayerDynamic
             // 
             player1PlayerDynamic.AutoSize = true;
             player1PlayerDynamic.Dock = DockStyle.Fill;
-            player1PlayerDynamic.Location = new Point(65, 0);
+            player1PlayerDynamic.Location = new Point(64, 0);
             player1PlayerDynamic.Name = "player1PlayerDynamic";
-            player1PlayerDynamic.Size = new Size(57, 24);
+            player1PlayerDynamic.Size = new Size(56, 24);
             player1PlayerDynamic.TabIndex = 4;
             player1PlayerDynamic.Text = "None";
             player1PlayerDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -527,9 +587,9 @@
             // 
             player1MaxHPDynamic.AutoSize = true;
             player1MaxHPDynamic.Dock = DockStyle.Fill;
-            player1MaxHPDynamic.Location = new Point(65, 48);
+            player1MaxHPDynamic.Location = new Point(64, 48);
             player1MaxHPDynamic.Name = "player1MaxHPDynamic";
-            player1MaxHPDynamic.Size = new Size(57, 24);
+            player1MaxHPDynamic.Size = new Size(56, 24);
             player1MaxHPDynamic.TabIndex = 5;
             player1MaxHPDynamic.Text = "0";
             player1MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -538,9 +598,9 @@
             // 
             player1MaxAPDynamic.AutoSize = true;
             player1MaxAPDynamic.Dock = DockStyle.Fill;
-            player1MaxAPDynamic.Location = new Point(65, 96);
+            player1MaxAPDynamic.Location = new Point(64, 96);
             player1MaxAPDynamic.Name = "player1MaxAPDynamic";
-            player1MaxAPDynamic.Size = new Size(57, 24);
+            player1MaxAPDynamic.Size = new Size(56, 24);
             player1MaxAPDynamic.TabIndex = 6;
             player1MaxAPDynamic.Text = "0";
             player1MaxAPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -549,9 +609,9 @@
             // 
             player1DamageDynamic.AutoSize = true;
             player1DamageDynamic.Dock = DockStyle.Fill;
-            player1DamageDynamic.Location = new Point(65, 120);
+            player1DamageDynamic.Location = new Point(64, 120);
             player1DamageDynamic.Name = "player1DamageDynamic";
-            player1DamageDynamic.Size = new Size(57, 24);
+            player1DamageDynamic.Size = new Size(56, 24);
             player1DamageDynamic.TabIndex = 7;
             player1DamageDynamic.Text = "1";
             player1DamageDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -562,7 +622,7 @@
             player1HP.Dock = DockStyle.Fill;
             player1HP.Location = new Point(3, 24);
             player1HP.Name = "player1HP";
-            player1HP.Size = new Size(56, 24);
+            player1HP.Size = new Size(55, 24);
             player1HP.TabIndex = 8;
             player1HP.Text = "HP";
             player1HP.TextAlign = ContentAlignment.MiddleLeft;
@@ -573,7 +633,7 @@
             player1AP.Dock = DockStyle.Fill;
             player1AP.Location = new Point(3, 72);
             player1AP.Name = "player1AP";
-            player1AP.Size = new Size(56, 24);
+            player1AP.Size = new Size(55, 24);
             player1AP.TabIndex = 9;
             player1AP.Text = "AP";
             player1AP.TextAlign = ContentAlignment.MiddleLeft;
@@ -581,21 +641,21 @@
             // player1APDynamic
             // 
             player1APDynamic.Dock = DockStyle.Fill;
-            player1APDynamic.Location = new Point(62, 72);
+            player1APDynamic.Location = new Point(61, 72);
             player1APDynamic.Margin = new Padding(0);
             player1APDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             player1APDynamic.Name = "player1APDynamic";
-            player1APDynamic.Size = new Size(63, 23);
+            player1APDynamic.Size = new Size(62, 23);
             player1APDynamic.TabIndex = 10;
             // 
             // player1HPDynamic
             // 
             player1HPDynamic.Dock = DockStyle.Fill;
-            player1HPDynamic.Location = new Point(62, 24);
+            player1HPDynamic.Location = new Point(61, 24);
             player1HPDynamic.Margin = new Padding(0);
             player1HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             player1HPDynamic.Name = "player1HPDynamic";
-            player1HPDynamic.Size = new Size(63, 23);
+            player1HPDynamic.Size = new Size(62, 23);
             player1HPDynamic.TabIndex = 11;
             // 
             // player1Defense
@@ -604,7 +664,7 @@
             player1Defense.Dock = DockStyle.Fill;
             player1Defense.Location = new Point(3, 144);
             player1Defense.Name = "player1Defense";
-            player1Defense.Size = new Size(56, 30);
+            player1Defense.Size = new Size(55, 30);
             player1Defense.TabIndex = 12;
             player1Defense.Text = "Defense";
             player1Defense.TextAlign = ContentAlignment.MiddleLeft;
@@ -613,9 +673,9 @@
             // 
             player1DefenseDynamic.AutoSize = true;
             player1DefenseDynamic.Dock = DockStyle.Fill;
-            player1DefenseDynamic.Location = new Point(65, 144);
+            player1DefenseDynamic.Location = new Point(64, 144);
             player1DefenseDynamic.Name = "player1DefenseDynamic";
-            player1DefenseDynamic.Size = new Size(57, 30);
+            player1DefenseDynamic.Size = new Size(56, 30);
             player1DefenseDynamic.TabIndex = 13;
             player1DefenseDynamic.Text = "0";
             player1DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -624,9 +684,9 @@
             // 
             player1Equipment.Controls.Add(tableLayoutPanel3);
             player1Equipment.Dock = DockStyle.Fill;
-            player1Equipment.Location = new Point(3, 311);
+            player1Equipment.Location = new Point(3, 310);
             player1Equipment.Name = "player1Equipment";
-            player1Equipment.Size = new Size(125, 123);
+            player1Equipment.Size = new Size(123, 122);
             player1Equipment.TabIndex = 2;
             player1Equipment.TabStop = false;
             player1Equipment.Text = "Equipment";
@@ -648,7 +708,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new Size(119, 101);
+            tableLayoutPanel3.Size = new Size(117, 100);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // player1Weapon
@@ -658,7 +718,7 @@
             player1Weapon.Dock = DockStyle.Fill;
             player1Weapon.Location = new Point(4, 1);
             player1Weapon.Name = "player1Weapon";
-            player1Weapon.Size = new Size(111, 24);
+            player1Weapon.Size = new Size(109, 23);
             player1Weapon.TabIndex = 0;
             player1Weapon.Text = "None";
             player1Weapon.TextAlign = ContentAlignment.MiddleCenter;
@@ -668,9 +728,9 @@
             player1HeadGear.AutoEllipsis = true;
             player1HeadGear.AutoSize = true;
             player1HeadGear.Dock = DockStyle.Fill;
-            player1HeadGear.Location = new Point(4, 26);
+            player1HeadGear.Location = new Point(4, 25);
             player1HeadGear.Name = "player1HeadGear";
-            player1HeadGear.Size = new Size(111, 24);
+            player1HeadGear.Size = new Size(109, 23);
             player1HeadGear.TabIndex = 1;
             player1HeadGear.Text = "None";
             player1HeadGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -679,9 +739,9 @@
             // 
             player1TorsoGear.AutoSize = true;
             player1TorsoGear.Dock = DockStyle.Fill;
-            player1TorsoGear.Location = new Point(4, 51);
+            player1TorsoGear.Location = new Point(4, 49);
             player1TorsoGear.Name = "player1TorsoGear";
-            player1TorsoGear.Size = new Size(111, 24);
+            player1TorsoGear.Size = new Size(109, 23);
             player1TorsoGear.TabIndex = 2;
             player1TorsoGear.Text = "None";
             player1TorsoGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -690,9 +750,9 @@
             // 
             player1LegsGear.AutoSize = true;
             player1LegsGear.Dock = DockStyle.Fill;
-            player1LegsGear.Location = new Point(4, 76);
+            player1LegsGear.Location = new Point(4, 73);
             player1LegsGear.Name = "player1LegsGear";
-            player1LegsGear.Size = new Size(111, 24);
+            player1LegsGear.Size = new Size(109, 26);
             player1LegsGear.TabIndex = 3;
             player1LegsGear.Text = "None";
             player1LegsGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -704,13 +764,13 @@
             tableLayoutPanel5.Controls.Add(tableLayoutPanel18, 0, 1);
             tableLayoutPanel5.Controls.Add(allies2, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(146, 3);
+            tableLayoutPanel5.Location = new Point(146, 4);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 2;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(137, 472);
+            tableLayoutPanel5.Size = new Size(135, 470);
             tableLayoutPanel5.TabIndex = 2;
             // 
             // tableLayoutPanel18
@@ -727,7 +787,7 @@
             tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Absolute, 180F));
             tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel18.Size = new Size(131, 437);
+            tableLayoutPanel18.Size = new Size(129, 435);
             tableLayoutPanel18.TabIndex = 0;
             // 
             // tableLayoutPanel21
@@ -760,16 +820,16 @@
             tableLayoutPanel21.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
             tableLayoutPanel21.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
             tableLayoutPanel21.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2881641F));
-            tableLayoutPanel21.Size = new Size(125, 174);
+            tableLayoutPanel21.Size = new Size(123, 174);
             tableLayoutPanel21.TabIndex = 2;
             // 
             // player2DefenseDynamic
             // 
             player2DefenseDynamic.AutoSize = true;
             player2DefenseDynamic.Dock = DockStyle.Fill;
-            player2DefenseDynamic.Location = new Point(65, 144);
+            player2DefenseDynamic.Location = new Point(64, 144);
             player2DefenseDynamic.Name = "player2DefenseDynamic";
-            player2DefenseDynamic.Size = new Size(57, 30);
+            player2DefenseDynamic.Size = new Size(56, 30);
             player2DefenseDynamic.TabIndex = 14;
             player2DefenseDynamic.Text = "0";
             player2DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -780,7 +840,7 @@
             player2Defense.Dock = DockStyle.Fill;
             player2Defense.Location = new Point(3, 144);
             player2Defense.Name = "player2Defense";
-            player2Defense.Size = new Size(56, 30);
+            player2Defense.Size = new Size(55, 30);
             player2Defense.TabIndex = 13;
             player2Defense.Text = "Defense";
             player2Defense.TextAlign = ContentAlignment.MiddleLeft;
@@ -791,7 +851,7 @@
             player2Player.Dock = DockStyle.Fill;
             player2Player.Location = new Point(3, 0);
             player2Player.Name = "player2Player";
-            player2Player.Size = new Size(56, 24);
+            player2Player.Size = new Size(55, 24);
             player2Player.TabIndex = 0;
             player2Player.Text = "Player";
             player2Player.TextAlign = ContentAlignment.MiddleLeft;
@@ -802,7 +862,7 @@
             player2MaxHP.Dock = DockStyle.Fill;
             player2MaxHP.Location = new Point(3, 48);
             player2MaxHP.Name = "player2MaxHP";
-            player2MaxHP.Size = new Size(56, 24);
+            player2MaxHP.Size = new Size(55, 24);
             player2MaxHP.TabIndex = 1;
             player2MaxHP.Text = "Max HP";
             player2MaxHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -813,7 +873,7 @@
             player2MaxAP.Dock = DockStyle.Fill;
             player2MaxAP.Location = new Point(3, 96);
             player2MaxAP.Name = "player2MaxAP";
-            player2MaxAP.Size = new Size(56, 24);
+            player2MaxAP.Size = new Size(55, 24);
             player2MaxAP.TabIndex = 2;
             player2MaxAP.Text = "Max AP";
             player2MaxAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -824,18 +884,18 @@
             player2Damage.Dock = DockStyle.Fill;
             player2Damage.Location = new Point(3, 120);
             player2Damage.Name = "player2Damage";
-            player2Damage.Size = new Size(56, 24);
+            player2Damage.Size = new Size(55, 24);
             player2Damage.TabIndex = 3;
-            player2Damage.Text = "Damage";
+            player2Damage.Text = "Attack";
             player2Damage.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // player2PlayerDynamic
             // 
             player2PlayerDynamic.AutoSize = true;
             player2PlayerDynamic.Dock = DockStyle.Fill;
-            player2PlayerDynamic.Location = new Point(65, 0);
+            player2PlayerDynamic.Location = new Point(64, 0);
             player2PlayerDynamic.Name = "player2PlayerDynamic";
-            player2PlayerDynamic.Size = new Size(57, 24);
+            player2PlayerDynamic.Size = new Size(56, 24);
             player2PlayerDynamic.TabIndex = 4;
             player2PlayerDynamic.Text = "None";
             player2PlayerDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -844,9 +904,9 @@
             // 
             player2MaxHPDynamic.AutoSize = true;
             player2MaxHPDynamic.Dock = DockStyle.Fill;
-            player2MaxHPDynamic.Location = new Point(65, 48);
+            player2MaxHPDynamic.Location = new Point(64, 48);
             player2MaxHPDynamic.Name = "player2MaxHPDynamic";
-            player2MaxHPDynamic.Size = new Size(57, 24);
+            player2MaxHPDynamic.Size = new Size(56, 24);
             player2MaxHPDynamic.TabIndex = 5;
             player2MaxHPDynamic.Text = "0";
             player2MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -855,9 +915,9 @@
             // 
             player2MaxAPDynamic.AutoSize = true;
             player2MaxAPDynamic.Dock = DockStyle.Fill;
-            player2MaxAPDynamic.Location = new Point(65, 96);
+            player2MaxAPDynamic.Location = new Point(64, 96);
             player2MaxAPDynamic.Name = "player2MaxAPDynamic";
-            player2MaxAPDynamic.Size = new Size(57, 24);
+            player2MaxAPDynamic.Size = new Size(56, 24);
             player2MaxAPDynamic.TabIndex = 6;
             player2MaxAPDynamic.Text = "0";
             player2MaxAPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -866,9 +926,9 @@
             // 
             player2DamageDynamic.AutoSize = true;
             player2DamageDynamic.Dock = DockStyle.Fill;
-            player2DamageDynamic.Location = new Point(65, 120);
+            player2DamageDynamic.Location = new Point(64, 120);
             player2DamageDynamic.Name = "player2DamageDynamic";
-            player2DamageDynamic.Size = new Size(57, 24);
+            player2DamageDynamic.Size = new Size(56, 24);
             player2DamageDynamic.TabIndex = 7;
             player2DamageDynamic.Text = "1";
             player2DamageDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -879,7 +939,7 @@
             player2HP.Dock = DockStyle.Fill;
             player2HP.Location = new Point(3, 24);
             player2HP.Name = "player2HP";
-            player2HP.Size = new Size(56, 24);
+            player2HP.Size = new Size(55, 24);
             player2HP.TabIndex = 8;
             player2HP.Text = "HP";
             player2HP.TextAlign = ContentAlignment.MiddleLeft;
@@ -890,7 +950,7 @@
             player2AP.Dock = DockStyle.Fill;
             player2AP.Location = new Point(3, 72);
             player2AP.Name = "player2AP";
-            player2AP.Size = new Size(56, 24);
+            player2AP.Size = new Size(55, 24);
             player2AP.TabIndex = 9;
             player2AP.Text = "AP";
             player2AP.TextAlign = ContentAlignment.MiddleLeft;
@@ -898,21 +958,21 @@
             // player2APDynamic
             // 
             player2APDynamic.Dock = DockStyle.Fill;
-            player2APDynamic.Location = new Point(62, 72);
+            player2APDynamic.Location = new Point(61, 72);
             player2APDynamic.Margin = new Padding(0);
             player2APDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             player2APDynamic.Name = "player2APDynamic";
-            player2APDynamic.Size = new Size(63, 23);
+            player2APDynamic.Size = new Size(62, 23);
             player2APDynamic.TabIndex = 10;
             // 
             // player2HPDynamic
             // 
             player2HPDynamic.Dock = DockStyle.Fill;
-            player2HPDynamic.Location = new Point(62, 24);
+            player2HPDynamic.Location = new Point(61, 24);
             player2HPDynamic.Margin = new Padding(0);
             player2HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             player2HPDynamic.Name = "player2HPDynamic";
-            player2HPDynamic.Size = new Size(63, 23);
+            player2HPDynamic.Size = new Size(62, 23);
             player2HPDynamic.TabIndex = 11;
             // 
             // player2Arts
@@ -921,7 +981,7 @@
             player2Arts.Dock = DockStyle.Fill;
             player2Arts.Location = new Point(3, 183);
             player2Arts.Name = "player2Arts";
-            player2Arts.Size = new Size(125, 122);
+            player2Arts.Size = new Size(123, 121);
             player2Arts.TabIndex = 0;
             player2Arts.TabStop = false;
             player2Arts.Text = "Arts";
@@ -949,7 +1009,7 @@
             tableLayoutPanel19.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel19.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel19.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel19.Size = new Size(119, 100);
+            tableLayoutPanel19.Size = new Size(117, 99);
             tableLayoutPanel19.TabIndex = 0;
             // 
             // player2Art4Cost
@@ -957,9 +1017,9 @@
             player2Art4Cost.AutoEllipsis = true;
             player2Art4Cost.AutoSize = true;
             player2Art4Cost.Dock = DockStyle.Fill;
-            player2Art4Cost.Location = new Point(96, 73);
+            player2Art4Cost.Location = new Point(94, 73);
             player2Art4Cost.Name = "player2Art4Cost";
-            player2Art4Cost.Size = new Size(19, 26);
+            player2Art4Cost.Size = new Size(19, 25);
             player2Art4Cost.TabIndex = 7;
             player2Art4Cost.Text = "0";
             player2Art4Cost.TextAlign = ContentAlignment.MiddleLeft;
@@ -971,7 +1031,7 @@
             player2Art4.Dock = DockStyle.Fill;
             player2Art4.Location = new Point(4, 73);
             player2Art4.Name = "player2Art4";
-            player2Art4.Size = new Size(85, 26);
+            player2Art4.Size = new Size(83, 25);
             player2Art4.TabIndex = 6;
             player2Art4.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -980,7 +1040,7 @@
             player2Art3Cost.AutoEllipsis = true;
             player2Art3Cost.AutoSize = true;
             player2Art3Cost.Dock = DockStyle.Fill;
-            player2Art3Cost.Location = new Point(96, 49);
+            player2Art3Cost.Location = new Point(94, 49);
             player2Art3Cost.Name = "player2Art3Cost";
             player2Art3Cost.Size = new Size(19, 23);
             player2Art3Cost.TabIndex = 5;
@@ -994,7 +1054,7 @@
             player2Art3.Dock = DockStyle.Fill;
             player2Art3.Location = new Point(4, 49);
             player2Art3.Name = "player2Art3";
-            player2Art3.Size = new Size(85, 23);
+            player2Art3.Size = new Size(83, 23);
             player2Art3.TabIndex = 4;
             player2Art3.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -1003,7 +1063,7 @@
             player2Art2Cost.AutoEllipsis = true;
             player2Art2Cost.AutoSize = true;
             player2Art2Cost.Dock = DockStyle.Fill;
-            player2Art2Cost.Location = new Point(96, 25);
+            player2Art2Cost.Location = new Point(94, 25);
             player2Art2Cost.Name = "player2Art2Cost";
             player2Art2Cost.Size = new Size(19, 23);
             player2Art2Cost.TabIndex = 3;
@@ -1017,7 +1077,7 @@
             player2Art2.Dock = DockStyle.Fill;
             player2Art2.Location = new Point(4, 25);
             player2Art2.Name = "player2Art2";
-            player2Art2.Size = new Size(85, 23);
+            player2Art2.Size = new Size(83, 23);
             player2Art2.TabIndex = 2;
             player2Art2.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -1026,7 +1086,7 @@
             player2Art1Cost.AutoEllipsis = true;
             player2Art1Cost.AutoSize = true;
             player2Art1Cost.Dock = DockStyle.Fill;
-            player2Art1Cost.Location = new Point(96, 1);
+            player2Art1Cost.Location = new Point(94, 1);
             player2Art1Cost.Name = "player2Art1Cost";
             player2Art1Cost.Size = new Size(19, 23);
             player2Art1Cost.TabIndex = 1;
@@ -1040,7 +1100,7 @@
             player2Art1.Dock = DockStyle.Fill;
             player2Art1.Location = new Point(4, 1);
             player2Art1.Name = "player2Art1";
-            player2Art1.Size = new Size(85, 23);
+            player2Art1.Size = new Size(83, 23);
             player2Art1.TabIndex = 0;
             player2Art1.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -1048,9 +1108,9 @@
             // 
             player2Equipment.Controls.Add(tableLayoutPanel20);
             player2Equipment.Dock = DockStyle.Fill;
-            player2Equipment.Location = new Point(3, 311);
+            player2Equipment.Location = new Point(3, 310);
             player2Equipment.Name = "player2Equipment";
-            player2Equipment.Size = new Size(125, 123);
+            player2Equipment.Size = new Size(123, 122);
             player2Equipment.TabIndex = 1;
             player2Equipment.TabStop = false;
             player2Equipment.Text = "Equipment";
@@ -1073,16 +1133,16 @@
             tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel20.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel20.Size = new Size(119, 101);
+            tableLayoutPanel20.Size = new Size(117, 100);
             tableLayoutPanel20.TabIndex = 0;
             // 
             // player2LegsGear
             // 
             player2LegsGear.AutoSize = true;
             player2LegsGear.Dock = DockStyle.Fill;
-            player2LegsGear.Location = new Point(4, 76);
+            player2LegsGear.Location = new Point(4, 73);
             player2LegsGear.Name = "player2LegsGear";
-            player2LegsGear.Size = new Size(111, 24);
+            player2LegsGear.Size = new Size(109, 26);
             player2LegsGear.TabIndex = 3;
             player2LegsGear.Text = "None";
             player2LegsGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1091,9 +1151,9 @@
             // 
             player2TorsoGear.AutoSize = true;
             player2TorsoGear.Dock = DockStyle.Fill;
-            player2TorsoGear.Location = new Point(4, 51);
+            player2TorsoGear.Location = new Point(4, 49);
             player2TorsoGear.Name = "player2TorsoGear";
-            player2TorsoGear.Size = new Size(111, 24);
+            player2TorsoGear.Size = new Size(109, 23);
             player2TorsoGear.TabIndex = 2;
             player2TorsoGear.Text = "None";
             player2TorsoGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1102,9 +1162,9 @@
             // 
             player2HeadGear.AutoSize = true;
             player2HeadGear.Dock = DockStyle.Fill;
-            player2HeadGear.Location = new Point(4, 26);
+            player2HeadGear.Location = new Point(4, 25);
             player2HeadGear.Name = "player2HeadGear";
-            player2HeadGear.Size = new Size(111, 24);
+            player2HeadGear.Size = new Size(109, 23);
             player2HeadGear.TabIndex = 1;
             player2HeadGear.Text = "None";
             player2HeadGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1115,7 +1175,7 @@
             player2Weapon.Dock = DockStyle.Fill;
             player2Weapon.Location = new Point(4, 1);
             player2Weapon.Name = "player2Weapon";
-            player2Weapon.Size = new Size(111, 24);
+            player2Weapon.Size = new Size(109, 23);
             player2Weapon.TabIndex = 0;
             player2Weapon.Text = "None";
             player2Weapon.TextAlign = ContentAlignment.MiddleCenter;
@@ -1127,7 +1187,7 @@
             allies2.Items.AddRange(new object[] { "None", "Virent" });
             allies2.Location = new Point(3, 3);
             allies2.Name = "allies2";
-            allies2.Size = new Size(131, 23);
+            allies2.Size = new Size(129, 23);
             allies2.TabIndex = 1;
             allies2.SelectedIndexChanged += Allies2_SelectedIndexChanged;
             // 
@@ -1138,12 +1198,12 @@
             tableLayoutPanel6.Controls.Add(tableLayoutPanel22, 0, 1);
             tableLayoutPanel6.Controls.Add(allies3, 0, 0);
             tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(289, 3);
+            tableLayoutPanel6.Location = new Point(288, 4);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 2;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Size = new Size(138, 472);
+            tableLayoutPanel6.Size = new Size(138, 470);
             tableLayoutPanel6.TabIndex = 3;
             // 
             // tableLayoutPanel22
@@ -1160,7 +1220,7 @@
             tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Absolute, 180F));
             tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel22.Size = new Size(132, 437);
+            tableLayoutPanel22.Size = new Size(132, 435);
             tableLayoutPanel22.TabIndex = 3;
             // 
             // tableLayoutPanel23
@@ -1259,7 +1319,7 @@
             player3Damage.Name = "player3Damage";
             player3Damage.Size = new Size(57, 24);
             player3Damage.TabIndex = 3;
-            player3Damage.Text = "Damage";
+            player3Damage.Text = "Attack";
             player3Damage.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // player3PlayerDynamic
@@ -1354,7 +1414,7 @@
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 183);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(126, 122);
+            groupBox1.Size = new Size(126, 121);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Arts";
@@ -1382,7 +1442,7 @@
             tableLayoutPanel24.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel24.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel24.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel24.Size = new Size(120, 100);
+            tableLayoutPanel24.Size = new Size(120, 99);
             tableLayoutPanel24.TabIndex = 0;
             // 
             // player3Art4Cost
@@ -1392,7 +1452,7 @@
             player3Art4Cost.Dock = DockStyle.Fill;
             player3Art4Cost.Location = new Point(97, 73);
             player3Art4Cost.Name = "player3Art4Cost";
-            player3Art4Cost.Size = new Size(19, 26);
+            player3Art4Cost.Size = new Size(19, 25);
             player3Art4Cost.TabIndex = 7;
             player3Art4Cost.Text = "0";
             player3Art4Cost.TextAlign = ContentAlignment.MiddleLeft;
@@ -1404,7 +1464,7 @@
             player3Art4.Dock = DockStyle.Fill;
             player3Art4.Location = new Point(4, 73);
             player3Art4.Name = "player3Art4";
-            player3Art4.Size = new Size(86, 26);
+            player3Art4.Size = new Size(86, 25);
             player3Art4.TabIndex = 6;
             player3Art4.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -1481,9 +1541,9 @@
             // 
             groupBox2.Controls.Add(tableLayoutPanel25);
             groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Location = new Point(3, 311);
+            groupBox2.Location = new Point(3, 310);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(126, 123);
+            groupBox2.Size = new Size(126, 122);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Equipment";
@@ -1506,16 +1566,16 @@
             tableLayoutPanel25.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel25.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel25.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel25.Size = new Size(120, 101);
+            tableLayoutPanel25.Size = new Size(120, 100);
             tableLayoutPanel25.TabIndex = 0;
             // 
             // player3LegsGear
             // 
             player3LegsGear.AutoSize = true;
             player3LegsGear.Dock = DockStyle.Fill;
-            player3LegsGear.Location = new Point(4, 76);
+            player3LegsGear.Location = new Point(4, 73);
             player3LegsGear.Name = "player3LegsGear";
-            player3LegsGear.Size = new Size(112, 24);
+            player3LegsGear.Size = new Size(112, 26);
             player3LegsGear.TabIndex = 3;
             player3LegsGear.Text = "None";
             player3LegsGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1524,9 +1584,9 @@
             // 
             player3TorsoGear.AutoSize = true;
             player3TorsoGear.Dock = DockStyle.Fill;
-            player3TorsoGear.Location = new Point(4, 51);
+            player3TorsoGear.Location = new Point(4, 49);
             player3TorsoGear.Name = "player3TorsoGear";
-            player3TorsoGear.Size = new Size(112, 24);
+            player3TorsoGear.Size = new Size(112, 23);
             player3TorsoGear.TabIndex = 2;
             player3TorsoGear.Text = "None";
             player3TorsoGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1535,9 +1595,9 @@
             // 
             player3HeadGear.AutoSize = true;
             player3HeadGear.Dock = DockStyle.Fill;
-            player3HeadGear.Location = new Point(4, 26);
+            player3HeadGear.Location = new Point(4, 25);
             player3HeadGear.Name = "player3HeadGear";
-            player3HeadGear.Size = new Size(112, 24);
+            player3HeadGear.Size = new Size(112, 23);
             player3HeadGear.TabIndex = 1;
             player3HeadGear.Text = "None";
             player3HeadGear.TextAlign = ContentAlignment.MiddleCenter;
@@ -1548,7 +1608,7 @@
             player3Weapon.Dock = DockStyle.Fill;
             player3Weapon.Location = new Point(4, 1);
             player3Weapon.Name = "player3Weapon";
-            player3Weapon.Size = new Size(112, 24);
+            player3Weapon.Size = new Size(112, 23);
             player3Weapon.TabIndex = 0;
             player3Weapon.Text = "None";
             player3Weapon.TextAlign = ContentAlignment.MiddleCenter;
@@ -1592,11 +1652,15 @@
             // 
             // tableLayoutPanel12
             // 
-            tableLayoutPanel12.ColumnCount = 2;
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55F));
-            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45F));
-            tableLayoutPanel12.Controls.Add(partyMeter, 0, 0);
-            tableLayoutPanel12.Controls.Add(partyOverflow, 1, 0);
+            tableLayoutPanel12.ColumnCount = 4;
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.18F));
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.18F));
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.18F));
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45.46F));
+            tableLayoutPanel12.Controls.Add(partyMeter3, 0, 0);
+            tableLayoutPanel12.Controls.Add(partyMeter2, 0, 0);
+            tableLayoutPanel12.Controls.Add(partyOverflow, 3, 0);
+            tableLayoutPanel12.Controls.Add(partyMeter1, 0, 0);
             tableLayoutPanel12.Dock = DockStyle.Fill;
             tableLayoutPanel12.Location = new Point(3, 3);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -1605,29 +1669,50 @@
             tableLayoutPanel12.Size = new Size(374, 21);
             tableLayoutPanel12.TabIndex = 0;
             // 
-            // partyMeter
+            // partyMeter3
             // 
-            partyMeter.Dock = DockStyle.Fill;
-            partyMeter.Location = new Point(0, 0);
-            partyMeter.Margin = new Padding(0);
-            partyMeter.Maximum = 12;
-            partyMeter.Name = "partyMeter";
-            partyMeter.Size = new Size(205, 21);
-            partyMeter.Step = 1;
-            partyMeter.Style = ProgressBarStyle.Continuous;
-            partyMeter.TabIndex = 0;
+            partyMeter3.Dock = DockStyle.Fill;
+            partyMeter3.Location = new Point(134, 0);
+            partyMeter3.Margin = new Padding(0);
+            partyMeter3.Maximum = 4;
+            partyMeter3.Name = "partyMeter3";
+            partyMeter3.Size = new Size(67, 21);
+            partyMeter3.Step = 1;
+            partyMeter3.TabIndex = 4;
+            // 
+            // partyMeter2
+            // 
+            partyMeter2.Dock = DockStyle.Fill;
+            partyMeter2.Location = new Point(67, 0);
+            partyMeter2.Margin = new Padding(0);
+            partyMeter2.Maximum = 4;
+            partyMeter2.Name = "partyMeter2";
+            partyMeter2.Size = new Size(67, 21);
+            partyMeter2.Step = 1;
+            partyMeter2.TabIndex = 3;
             // 
             // partyOverflow
             // 
             partyOverflow.Dock = DockStyle.Fill;
-            partyOverflow.Location = new Point(205, 0);
-            partyOverflow.Margin = new Padding(0);
+            partyOverflow.Location = new Point(204, 0);
+            partyOverflow.Margin = new Padding(3, 0, 0, 0);
             partyOverflow.Maximum = 10;
             partyOverflow.Name = "partyOverflow";
-            partyOverflow.Size = new Size(169, 21);
+            partyOverflow.Size = new Size(170, 21);
             partyOverflow.Step = 1;
             partyOverflow.Style = ProgressBarStyle.Continuous;
             partyOverflow.TabIndex = 1;
+            // 
+            // partyMeter1
+            // 
+            partyMeter1.Dock = DockStyle.Fill;
+            partyMeter1.Location = new Point(0, 0);
+            partyMeter1.Margin = new Padding(0);
+            partyMeter1.Maximum = 4;
+            partyMeter1.Name = "partyMeter1";
+            partyMeter1.Size = new Size(67, 21);
+            partyMeter1.Step = 1;
+            partyMeter1.TabIndex = 2;
             // 
             // numericParty
             // 
@@ -1643,36 +1728,215 @@
             // 
             tableLayoutPanel10.ColumnCount = 1;
             tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel10.Controls.Add(tableLayoutPanel7, 0, 2);
             tableLayoutPanel10.Controls.Add(groupEnemies, 0, 0);
-            tableLayoutPanel10.Controls.Add(groupInventory, 0, 1);
-            tableLayoutPanel10.Controls.Add(groupStats, 0, 2);
+            tableLayoutPanel10.Controls.Add(tabMultipurpose, 0, 1);
             tableLayoutPanel10.Dock = DockStyle.Fill;
             tableLayoutPanel10.Location = new Point(445, 58);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
             tableLayoutPanel10.RowCount = 3;
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel10.Size = new Size(436, 500);
             tableLayoutPanel10.TabIndex = 5;
             // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.ColumnCount = 2;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel7.Controls.Add(openFileButton, 0, 0);
+            tableLayoutPanel7.Controls.Add(fileReload, 1, 0);
+            tableLayoutPanel7.Dock = DockStyle.Fill;
+            tableLayoutPanel7.Location = new Point(0, 470);
+            tableLayoutPanel7.Margin = new Padding(0);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel7.Size = new Size(436, 30);
+            tableLayoutPanel7.TabIndex = 0;
+            // 
+            // openFileButton
+            // 
+            openFileButton.Dock = DockStyle.Fill;
+            openFileButton.Location = new Point(3, 3);
+            openFileButton.Name = "openFileButton";
+            openFileButton.Size = new Size(212, 24);
+            openFileButton.TabIndex = 0;
+            openFileButton.Text = "Open File...";
+            openFileButton.UseVisualStyleBackColor = true;
+            openFileButton.Click += OpenFileButton_Click;
+            // 
+            // fileReload
+            // 
+            fileReload.AutoEllipsis = true;
+            fileReload.Dock = DockStyle.Fill;
+            fileReload.Location = new Point(221, 3);
+            fileReload.Name = "fileReload";
+            fileReload.Size = new Size(212, 24);
+            fileReload.TabIndex = 2;
+            fileReload.Text = "Reload";
+            fileReload.UseVisualStyleBackColor = true;
+            fileReload.Click += FileReload_Click;
+            // 
             // groupEnemies
             // 
+            groupEnemies.Controls.Add(tableLayoutPanel27);
             groupEnemies.Dock = DockStyle.Fill;
             groupEnemies.Location = new Point(3, 3);
             groupEnemies.Name = "groupEnemies";
-            groupEnemies.Size = new Size(430, 194);
+            groupEnemies.Size = new Size(430, 229);
             groupEnemies.TabIndex = 1;
             groupEnemies.TabStop = false;
             groupEnemies.Text = "Enemies";
+            // 
+            // tableLayoutPanel27
+            // 
+            tableLayoutPanel27.ColumnCount = 1;
+            tableLayoutPanel27.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel27.Controls.Add(tableLayoutPanel28, 0, 1);
+            tableLayoutPanel27.Controls.Add(tabEnemies, 0, 0);
+            tableLayoutPanel27.Dock = DockStyle.Fill;
+            tableLayoutPanel27.Location = new Point(3, 19);
+            tableLayoutPanel27.Name = "tableLayoutPanel27";
+            tableLayoutPanel27.RowCount = 2;
+            tableLayoutPanel27.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel27.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel27.Size = new Size(424, 207);
+            tableLayoutPanel27.TabIndex = 0;
+            // 
+            // tableLayoutPanel28
+            // 
+            tableLayoutPanel28.ColumnCount = 2;
+            tableLayoutPanel28.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel28.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel28.Controls.Add(loadEnemy, 0, 0);
+            tableLayoutPanel28.Controls.Add(unloadEnemy, 1, 0);
+            tableLayoutPanel28.Dock = DockStyle.Fill;
+            tableLayoutPanel28.Location = new Point(0, 178);
+            tableLayoutPanel28.Margin = new Padding(0);
+            tableLayoutPanel28.Name = "tableLayoutPanel28";
+            tableLayoutPanel28.RowCount = 1;
+            tableLayoutPanel28.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel28.Size = new Size(424, 29);
+            tableLayoutPanel28.TabIndex = 2;
+            // 
+            // loadEnemy
+            // 
+            loadEnemy.Dock = DockStyle.Fill;
+            loadEnemy.Location = new Point(3, 3);
+            loadEnemy.Name = "loadEnemy";
+            loadEnemy.Size = new Size(206, 23);
+            loadEnemy.TabIndex = 0;
+            loadEnemy.Text = "Select Enemies...";
+            loadEnemy.UseVisualStyleBackColor = true;
+            loadEnemy.Click += LoadEnemy_Click;
+            // 
+            // unloadEnemy
+            // 
+            unloadEnemy.AutoEllipsis = true;
+            unloadEnemy.Dock = DockStyle.Fill;
+            unloadEnemy.Location = new Point(215, 3);
+            unloadEnemy.Name = "unloadEnemy";
+            unloadEnemy.Size = new Size(206, 23);
+            unloadEnemy.TabIndex = 2;
+            unloadEnemy.Text = "Unload Enemies";
+            unloadEnemy.UseVisualStyleBackColor = true;
+            // 
+            // tabEnemies
+            // 
+            tabEnemies.Controls.Add(tabBasicEnemies);
+            tabEnemies.Controls.Add(tabUnique);
+            tabEnemies.Dock = DockStyle.Fill;
+            tabEnemies.Location = new Point(3, 3);
+            tabEnemies.Name = "tabEnemies";
+            tabEnemies.SelectedIndex = 0;
+            tabEnemies.Size = new Size(418, 172);
+            tabEnemies.TabIndex = 1;
+            // 
+            // tabBasicEnemies
+            // 
+            tabBasicEnemies.Controls.Add(tableLayoutPanel29);
+            tabBasicEnemies.Location = new Point(4, 24);
+            tabBasicEnemies.Name = "tabBasicEnemies";
+            tabBasicEnemies.Padding = new Padding(3);
+            tabBasicEnemies.Size = new Size(410, 144);
+            tabBasicEnemies.TabIndex = 0;
+            tabBasicEnemies.Text = "Basic";
+            tabBasicEnemies.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel29
+            // 
+            tableLayoutPanel29.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tableLayoutPanel29.ColumnCount = 3;
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel29.Dock = DockStyle.Fill;
+            tableLayoutPanel29.Location = new Point(3, 3);
+            tableLayoutPanel29.Name = "tableLayoutPanel29";
+            tableLayoutPanel29.RowCount = 1;
+            tableLayoutPanel29.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel29.Size = new Size(404, 138);
+            tableLayoutPanel29.TabIndex = 0;
+            // 
+            // tabUnique
+            // 
+            tabUnique.Location = new Point(4, 24);
+            tabUnique.Name = "tabUnique";
+            tabUnique.Padding = new Padding(3);
+            tabUnique.Size = new Size(410, 144);
+            tabUnique.TabIndex = 1;
+            tabUnique.Text = "Unique";
+            tabUnique.UseVisualStyleBackColor = true;
+            // 
+            // tabMultipurpose
+            // 
+            tabMultipurpose.Controls.Add(tabGeneral);
+            tabMultipurpose.Controls.Add(tabRNG);
+            tabMultipurpose.Dock = DockStyle.Fill;
+            tabMultipurpose.Location = new Point(3, 238);
+            tabMultipurpose.Name = "tabMultipurpose";
+            tabMultipurpose.SelectedIndex = 0;
+            tabMultipurpose.Size = new Size(430, 229);
+            tabMultipurpose.TabIndex = 3;
+            // 
+            // tabGeneral
+            // 
+            tabGeneral.Controls.Add(tableLayoutPanel26);
+            tabGeneral.Location = new Point(4, 24);
+            tabGeneral.Name = "tabGeneral";
+            tabGeneral.Padding = new Padding(3);
+            tabGeneral.Size = new Size(422, 201);
+            tabGeneral.TabIndex = 0;
+            tabGeneral.Text = "General";
+            tabGeneral.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel26
+            // 
+            tableLayoutPanel26.ColumnCount = 2;
+            tableLayoutPanel26.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel26.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel26.Controls.Add(groupInventory, 0, 0);
+            tableLayoutPanel26.Controls.Add(groupStats, 1, 0);
+            tableLayoutPanel26.Dock = DockStyle.Fill;
+            tableLayoutPanel26.Location = new Point(3, 3);
+            tableLayoutPanel26.Margin = new Padding(0);
+            tableLayoutPanel26.Name = "tableLayoutPanel26";
+            tableLayoutPanel26.RowCount = 1;
+            tableLayoutPanel26.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel26.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel26.Size = new Size(416, 195);
+            tableLayoutPanel26.TabIndex = 0;
             // 
             // groupInventory
             // 
             groupInventory.Controls.Add(listInventory);
             groupInventory.Dock = DockStyle.Fill;
-            groupInventory.Location = new Point(3, 203);
+            groupInventory.Location = new Point(3, 3);
             groupInventory.Name = "groupInventory";
-            groupInventory.Size = new Size(430, 144);
+            groupInventory.Size = new Size(202, 189);
             groupInventory.TabIndex = 3;
             groupInventory.TabStop = false;
             groupInventory.Text = "Inventory";
@@ -1683,82 +1947,26 @@
             listInventory.FormattingEnabled = true;
             listInventory.ItemHeight = 15;
             listInventory.Location = new Point(3, 19);
-            listInventory.MultiColumn = true;
             listInventory.Name = "listInventory";
-            listInventory.Size = new Size(424, 122);
+            listInventory.SelectionMode = SelectionMode.None;
+            listInventory.Size = new Size(196, 167);
             listInventory.TabIndex = 1;
             // 
             // groupStats
             // 
-            groupStats.Controls.Add(statisticsLayout);
+            groupStats.Controls.Add(tableLayoutPanel8);
             groupStats.Dock = DockStyle.Fill;
-            groupStats.Location = new Point(3, 353);
+            groupStats.Location = new Point(211, 3);
             groupStats.Name = "groupStats";
-            groupStats.Size = new Size(430, 144);
+            groupStats.Size = new Size(202, 189);
             groupStats.TabIndex = 2;
             groupStats.TabStop = false;
             groupStats.Text = "Statistics";
             // 
-            // statisticsLayout
-            // 
-            statisticsLayout.ColumnCount = 1;
-            statisticsLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            statisticsLayout.Controls.Add(tableLayoutPanel7, 0, 1);
-            statisticsLayout.Controls.Add(tableLayoutPanel8, 0, 0);
-            statisticsLayout.Dock = DockStyle.Fill;
-            statisticsLayout.Location = new Point(3, 19);
-            statisticsLayout.Name = "statisticsLayout";
-            statisticsLayout.RowCount = 2;
-            statisticsLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            statisticsLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            statisticsLayout.Size = new Size(424, 122);
-            statisticsLayout.TabIndex = 0;
-            // 
-            // tableLayoutPanel7
-            // 
-            tableLayoutPanel7.ColumnCount = 2;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel7.Controls.Add(openFileButton, 0, 0);
-            tableLayoutPanel7.Controls.Add(fileReload, 1, 0);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(0, 93);
-            tableLayoutPanel7.Margin = new Padding(0);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Size = new Size(424, 29);
-            tableLayoutPanel7.TabIndex = 0;
-            // 
-            // openFileButton
-            // 
-            openFileButton.Dock = DockStyle.Fill;
-            openFileButton.Location = new Point(3, 3);
-            openFileButton.Name = "openFileButton";
-            openFileButton.Size = new Size(206, 23);
-            openFileButton.TabIndex = 0;
-            openFileButton.Text = "Open File...";
-            openFileButton.UseVisualStyleBackColor = true;
-            openFileButton.Click += OpenFileButton_Click;
-            // 
-            // fileReload
-            // 
-            fileReload.AutoEllipsis = true;
-            fileReload.Dock = DockStyle.Fill;
-            fileReload.Location = new Point(215, 3);
-            fileReload.Name = "fileReload";
-            fileReload.Size = new Size(206, 23);
-            fileReload.TabIndex = 2;
-            fileReload.Text = "Reload";
-            fileReload.UseVisualStyleBackColor = true;
-            fileReload.Click += FileReload_Click;
-            // 
             // tableLayoutPanel8
             // 
-            tableLayoutPanel8.ColumnCount = 4;
+            tableLayoutPanel8.ColumnCount = 2;
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel8.Controls.Add(labelLevel, 0, 0);
             tableLayoutPanel8.Controls.Add(labelEXP, 0, 1);
@@ -1766,20 +1974,23 @@
             tableLayoutPanel8.Controls.Add(labelLevelDynamic, 1, 0);
             tableLayoutPanel8.Controls.Add(labelEXPDynamic, 1, 1);
             tableLayoutPanel8.Controls.Add(labelNextDynamic, 1, 2);
-            tableLayoutPanel8.Controls.Add(labelChapter, 2, 0);
-            tableLayoutPanel8.Controls.Add(labelChapterDynamic, 3, 0);
-            tableLayoutPanel8.Controls.Add(labelLocation, 2, 1);
-            tableLayoutPanel8.Controls.Add(labelLocationDynamic, 3, 1);
-            tableLayoutPanel8.Controls.Add(labelMoney, 2, 2);
-            tableLayoutPanel8.Controls.Add(labelMoneyDynamic, 3, 2);
+            tableLayoutPanel8.Controls.Add(labelChapter, 0, 3);
+            tableLayoutPanel8.Controls.Add(labelChapterDynamic, 1, 3);
+            tableLayoutPanel8.Controls.Add(labelLocation, 0, 4);
+            tableLayoutPanel8.Controls.Add(labelLocationDynamic, 1, 4);
+            tableLayoutPanel8.Controls.Add(labelMoney, 0, 5);
+            tableLayoutPanel8.Controls.Add(labelMoneyDynamic, 1, 5);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(3, 3);
+            tableLayoutPanel8.Location = new Point(3, 19);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 3;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25.00062F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25.0006256F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 25.0006256F));
-            tableLayoutPanel8.Size = new Size(418, 87);
+            tableLayoutPanel8.RowCount = 6;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel8.Size = new Size(196, 167);
             tableLayoutPanel8.TabIndex = 1;
             // 
             // labelLevel
@@ -1788,7 +1999,7 @@
             labelLevel.Dock = DockStyle.Fill;
             labelLevel.Location = new Point(3, 0);
             labelLevel.Name = "labelLevel";
-            labelLevel.Size = new Size(74, 28);
+            labelLevel.Size = new Size(74, 27);
             labelLevel.TabIndex = 0;
             labelLevel.Text = "Level";
             labelLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -1797,9 +2008,9 @@
             // 
             labelEXP.AutoSize = true;
             labelEXP.Dock = DockStyle.Fill;
-            labelEXP.Location = new Point(3, 28);
+            labelEXP.Location = new Point(3, 27);
             labelEXP.Name = "labelEXP";
-            labelEXP.Size = new Size(74, 29);
+            labelEXP.Size = new Size(74, 27);
             labelEXP.TabIndex = 1;
             labelEXP.Text = "Total EXP";
             labelEXP.TextAlign = ContentAlignment.MiddleLeft;
@@ -1808,9 +2019,9 @@
             // 
             labelNext.AutoSize = true;
             labelNext.Dock = DockStyle.Fill;
-            labelNext.Location = new Point(3, 57);
+            labelNext.Location = new Point(3, 54);
             labelNext.Name = "labelNext";
-            labelNext.Size = new Size(74, 30);
+            labelNext.Size = new Size(74, 27);
             labelNext.TabIndex = 2;
             labelNext.Text = "EXP to next";
             labelNext.TextAlign = ContentAlignment.MiddleLeft;
@@ -1821,7 +2032,7 @@
             labelLevelDynamic.Dock = DockStyle.Fill;
             labelLevelDynamic.Location = new Point(83, 0);
             labelLevelDynamic.Name = "labelLevelDynamic";
-            labelLevelDynamic.Size = new Size(106, 28);
+            labelLevelDynamic.Size = new Size(110, 27);
             labelLevelDynamic.TabIndex = 9;
             labelLevelDynamic.Text = "1";
             labelLevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -1830,9 +2041,9 @@
             // 
             labelEXPDynamic.AutoSize = true;
             labelEXPDynamic.Dock = DockStyle.Fill;
-            labelEXPDynamic.Location = new Point(83, 28);
+            labelEXPDynamic.Location = new Point(83, 27);
             labelEXPDynamic.Name = "labelEXPDynamic";
-            labelEXPDynamic.Size = new Size(106, 29);
+            labelEXPDynamic.Size = new Size(110, 27);
             labelEXPDynamic.TabIndex = 10;
             labelEXPDynamic.Text = "6";
             labelEXPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -1841,9 +2052,9 @@
             // 
             labelNextDynamic.AutoSize = true;
             labelNextDynamic.Dock = DockStyle.Fill;
-            labelNextDynamic.Location = new Point(83, 57);
+            labelNextDynamic.Location = new Point(83, 54);
             labelNextDynamic.Name = "labelNextDynamic";
-            labelNextDynamic.Size = new Size(106, 30);
+            labelNextDynamic.Size = new Size(110, 27);
             labelNextDynamic.TabIndex = 13;
             labelNextDynamic.Text = "15";
             labelNextDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -1852,9 +2063,9 @@
             // 
             labelChapter.AutoSize = true;
             labelChapter.Dock = DockStyle.Fill;
-            labelChapter.Location = new Point(195, 0);
+            labelChapter.Location = new Point(3, 81);
             labelChapter.Name = "labelChapter";
-            labelChapter.Size = new Size(106, 28);
+            labelChapter.Size = new Size(74, 27);
             labelChapter.TabIndex = 3;
             labelChapter.Text = "Chapter";
             labelChapter.TextAlign = ContentAlignment.MiddleLeft;
@@ -1863,9 +2074,9 @@
             // 
             labelChapterDynamic.AutoSize = true;
             labelChapterDynamic.Dock = DockStyle.Fill;
-            labelChapterDynamic.Location = new Point(307, 0);
+            labelChapterDynamic.Location = new Point(83, 81);
             labelChapterDynamic.Name = "labelChapterDynamic";
-            labelChapterDynamic.Size = new Size(108, 28);
+            labelChapterDynamic.Size = new Size(110, 27);
             labelChapterDynamic.TabIndex = 8;
             labelChapterDynamic.Text = "1";
             labelChapterDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -1874,9 +2085,9 @@
             // 
             labelLocation.AutoSize = true;
             labelLocation.Dock = DockStyle.Fill;
-            labelLocation.Location = new Point(195, 28);
+            labelLocation.Location = new Point(3, 108);
             labelLocation.Name = "labelLocation";
-            labelLocation.Size = new Size(106, 29);
+            labelLocation.Size = new Size(74, 27);
             labelLocation.TabIndex = 14;
             labelLocation.Text = "Location";
             labelLocation.TextAlign = ContentAlignment.MiddleLeft;
@@ -1885,9 +2096,9 @@
             // 
             labelLocationDynamic.AutoSize = true;
             labelLocationDynamic.Dock = DockStyle.Fill;
-            labelLocationDynamic.Location = new Point(307, 28);
+            labelLocationDynamic.Location = new Point(83, 108);
             labelLocationDynamic.Name = "labelLocationDynamic";
-            labelLocationDynamic.Size = new Size(108, 29);
+            labelLocationDynamic.Size = new Size(110, 27);
             labelLocationDynamic.TabIndex = 15;
             labelLocationDynamic.Text = "Colony A";
             labelLocationDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -1896,9 +2107,9 @@
             // 
             labelMoney.AutoSize = true;
             labelMoney.Dock = DockStyle.Fill;
-            labelMoney.Location = new Point(195, 57);
+            labelMoney.Location = new Point(3, 135);
             labelMoney.Name = "labelMoney";
-            labelMoney.Size = new Size(106, 30);
+            labelMoney.Size = new Size(74, 32);
             labelMoney.TabIndex = 16;
             labelMoney.Text = "Money";
             labelMoney.TextAlign = ContentAlignment.MiddleLeft;
@@ -1907,12 +2118,320 @@
             // 
             labelMoneyDynamic.AutoSize = true;
             labelMoneyDynamic.Dock = DockStyle.Fill;
-            labelMoneyDynamic.Location = new Point(307, 57);
+            labelMoneyDynamic.Location = new Point(83, 135);
             labelMoneyDynamic.Name = "labelMoneyDynamic";
-            labelMoneyDynamic.Size = new Size(108, 30);
+            labelMoneyDynamic.Size = new Size(110, 32);
             labelMoneyDynamic.TabIndex = 17;
             labelMoneyDynamic.Text = "0 G";
             labelMoneyDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tabRNG
+            // 
+            tabRNG.Controls.Add(tableLayoutPanel30);
+            tabRNG.Location = new Point(4, 24);
+            tabRNG.Name = "tabRNG";
+            tabRNG.Padding = new Padding(3);
+            tabRNG.Size = new Size(422, 201);
+            tabRNG.TabIndex = 1;
+            tabRNG.Text = "Combat";
+            tabRNG.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel30
+            // 
+            tableLayoutPanel30.ColumnCount = 2;
+            tableLayoutPanel30.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel30.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel30.Controls.Add(combatGroupDamage, 1, 0);
+            tableLayoutPanel30.Controls.Add(tableLayoutPanel31, 0, 0);
+            tableLayoutPanel30.Dock = DockStyle.Fill;
+            tableLayoutPanel30.Location = new Point(3, 3);
+            tableLayoutPanel30.Name = "tableLayoutPanel30";
+            tableLayoutPanel30.RowCount = 1;
+            tableLayoutPanel30.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel30.Size = new Size(416, 195);
+            tableLayoutPanel30.TabIndex = 0;
+            // 
+            // combatGroupDamage
+            // 
+            combatGroupDamage.Controls.Add(tableLayoutPanel32);
+            combatGroupDamage.Dock = DockStyle.Fill;
+            combatGroupDamage.Location = new Point(211, 3);
+            combatGroupDamage.Name = "combatGroupDamage";
+            combatGroupDamage.Size = new Size(202, 189);
+            combatGroupDamage.TabIndex = 0;
+            combatGroupDamage.TabStop = false;
+            combatGroupDamage.Text = "Calculate Damage";
+            // 
+            // tableLayoutPanel32
+            // 
+            tableLayoutPanel32.ColumnCount = 1;
+            tableLayoutPanel32.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel32.Controls.Add(tableLayoutPanel33, 0, 2);
+            tableLayoutPanel32.Controls.Add(tableLayoutPanel34, 0, 0);
+            tableLayoutPanel32.Controls.Add(damageCalculate, 0, 1);
+            tableLayoutPanel32.Dock = DockStyle.Fill;
+            tableLayoutPanel32.Location = new Point(3, 19);
+            tableLayoutPanel32.Name = "tableLayoutPanel32";
+            tableLayoutPanel32.RowCount = 3;
+            tableLayoutPanel32.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel32.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel32.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel32.Size = new Size(196, 167);
+            tableLayoutPanel32.TabIndex = 0;
+            // 
+            // tableLayoutPanel33
+            // 
+            tableLayoutPanel33.ColumnCount = 2;
+            tableLayoutPanel33.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 106F));
+            tableLayoutPanel33.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel33.Controls.Add(damageDamage, 0, 0);
+            tableLayoutPanel33.Controls.Add(damageDamageDynamic, 1, 0);
+            tableLayoutPanel33.Dock = DockStyle.Fill;
+            tableLayoutPanel33.Location = new Point(0, 144);
+            tableLayoutPanel33.Margin = new Padding(0);
+            tableLayoutPanel33.Name = "tableLayoutPanel33";
+            tableLayoutPanel33.RowCount = 1;
+            tableLayoutPanel33.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel33.Size = new Size(196, 23);
+            tableLayoutPanel33.TabIndex = 0;
+            // 
+            // damageDamage
+            // 
+            damageDamage.AutoSize = true;
+            damageDamage.Dock = DockStyle.Fill;
+            damageDamage.Location = new Point(3, 0);
+            damageDamage.Name = "damageDamage";
+            damageDamage.Size = new Size(100, 23);
+            damageDamage.TabIndex = 0;
+            damageDamage.Text = "Damage";
+            damageDamage.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // damageDamageDynamic
+            // 
+            damageDamageDynamic.AutoSize = true;
+            damageDamageDynamic.Dock = DockStyle.Fill;
+            damageDamageDynamic.Location = new Point(109, 0);
+            damageDamageDynamic.Name = "damageDamageDynamic";
+            damageDamageDynamic.Size = new Size(84, 23);
+            damageDamageDynamic.TabIndex = 1;
+            damageDamageDynamic.Text = "0";
+            damageDamageDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel34
+            // 
+            tableLayoutPanel34.ColumnCount = 2;
+            tableLayoutPanel34.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 106F));
+            tableLayoutPanel34.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel34.Controls.Add(damageAttack, 0, 0);
+            tableLayoutPanel34.Controls.Add(damageMultiplier, 0, 1);
+            tableLayoutPanel34.Controls.Add(damageDefense, 0, 2);
+            tableLayoutPanel34.Controls.Add(damageEvasion, 0, 3);
+            tableLayoutPanel34.Controls.Add(damageAttackDynamic, 1, 0);
+            tableLayoutPanel34.Controls.Add(damageMultiplierDynamic, 1, 1);
+            tableLayoutPanel34.Controls.Add(damageEvasionDynamic, 1, 3);
+            tableLayoutPanel34.Controls.Add(damageDefenseDynamic, 1, 2);
+            tableLayoutPanel34.Dock = DockStyle.Fill;
+            tableLayoutPanel34.Location = new Point(0, 0);
+            tableLayoutPanel34.Margin = new Padding(0);
+            tableLayoutPanel34.Name = "tableLayoutPanel34";
+            tableLayoutPanel34.RowCount = 4;
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel34.Size = new Size(196, 115);
+            tableLayoutPanel34.TabIndex = 1;
+            // 
+            // damageAttack
+            // 
+            damageAttack.AutoSize = true;
+            damageAttack.Dock = DockStyle.Fill;
+            damageAttack.Location = new Point(3, 0);
+            damageAttack.Name = "damageAttack";
+            damageAttack.Size = new Size(100, 28);
+            damageAttack.TabIndex = 0;
+            damageAttack.Text = "Attacker Attack";
+            damageAttack.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // damageMultiplier
+            // 
+            damageMultiplier.AutoSize = true;
+            damageMultiplier.Dock = DockStyle.Fill;
+            damageMultiplier.Location = new Point(3, 28);
+            damageMultiplier.Name = "damageMultiplier";
+            damageMultiplier.Size = new Size(100, 28);
+            damageMultiplier.TabIndex = 1;
+            damageMultiplier.Text = "Attack Multiplier";
+            damageMultiplier.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // damageDefense
+            // 
+            damageDefense.AutoSize = true;
+            damageDefense.Dock = DockStyle.Fill;
+            damageDefense.Location = new Point(3, 56);
+            damageDefense.Name = "damageDefense";
+            damageDefense.Size = new Size(100, 28);
+            damageDefense.TabIndex = 2;
+            damageDefense.Text = "Defender Defense";
+            damageDefense.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // damageEvasion
+            // 
+            damageEvasion.AutoSize = true;
+            damageEvasion.Dock = DockStyle.Fill;
+            damageEvasion.Location = new Point(3, 84);
+            damageEvasion.Name = "damageEvasion";
+            damageEvasion.Size = new Size(100, 31);
+            damageEvasion.TabIndex = 3;
+            damageEvasion.Text = "Defender Evasion";
+            damageEvasion.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // damageAttackDynamic
+            // 
+            damageAttackDynamic.Dock = DockStyle.Fill;
+            damageAttackDynamic.Location = new Point(109, 3);
+            damageAttackDynamic.Maximum = new decimal(new int[] { 6750105, 0, 0, 0 });
+            damageAttackDynamic.Name = "damageAttackDynamic";
+            damageAttackDynamic.Size = new Size(84, 23);
+            damageAttackDynamic.TabIndex = 4;
+            // 
+            // damageMultiplierDynamic
+            // 
+            damageMultiplierDynamic.Dock = DockStyle.Fill;
+            damageMultiplierDynamic.Location = new Point(109, 31);
+            damageMultiplierDynamic.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
+            damageMultiplierDynamic.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            damageMultiplierDynamic.Name = "damageMultiplierDynamic";
+            damageMultiplierDynamic.Size = new Size(84, 23);
+            damageMultiplierDynamic.TabIndex = 5;
+            damageMultiplierDynamic.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // damageEvasionDynamic
+            // 
+            damageEvasionDynamic.Dock = DockStyle.Fill;
+            damageEvasionDynamic.Location = new Point(109, 87);
+            damageEvasionDynamic.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            damageEvasionDynamic.Name = "damageEvasionDynamic";
+            damageEvasionDynamic.Size = new Size(84, 23);
+            damageEvasionDynamic.TabIndex = 6;
+            damageEvasionDynamic.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // damageDefenseDynamic
+            // 
+            damageDefenseDynamic.Dock = DockStyle.Fill;
+            damageDefenseDynamic.Location = new Point(109, 59);
+            damageDefenseDynamic.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            damageDefenseDynamic.Name = "damageDefenseDynamic";
+            damageDefenseDynamic.Size = new Size(84, 23);
+            damageDefenseDynamic.TabIndex = 7;
+            // 
+            // damageCalculate
+            // 
+            damageCalculate.Dock = DockStyle.Fill;
+            damageCalculate.Location = new Point(3, 118);
+            damageCalculate.Name = "damageCalculate";
+            damageCalculate.Size = new Size(190, 23);
+            damageCalculate.TabIndex = 2;
+            damageCalculate.Text = "Calculate Damage";
+            damageCalculate.UseVisualStyleBackColor = true;
+            damageCalculate.Click += DamageCalculate_Click;
+            // 
+            // tableLayoutPanel31
+            // 
+            tableLayoutPanel31.ColumnCount = 1;
+            tableLayoutPanel31.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel31.Controls.Add(groupTurns, 0, 0);
+            tableLayoutPanel31.Controls.Add(combatMisc, 0, 1);
+            tableLayoutPanel31.Dock = DockStyle.Fill;
+            tableLayoutPanel31.Location = new Point(0, 0);
+            tableLayoutPanel31.Margin = new Padding(0);
+            tableLayoutPanel31.Name = "tableLayoutPanel31";
+            tableLayoutPanel31.RowCount = 2;
+            tableLayoutPanel31.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel31.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel31.Size = new Size(208, 195);
+            tableLayoutPanel31.TabIndex = 1;
+            // 
+            // groupTurns
+            // 
+            groupTurns.Controls.Add(tableLayoutPanel35);
+            groupTurns.Dock = DockStyle.Fill;
+            groupTurns.Location = new Point(3, 3);
+            groupTurns.Name = "groupTurns";
+            groupTurns.Size = new Size(202, 91);
+            groupTurns.TabIndex = 0;
+            groupTurns.TabStop = false;
+            groupTurns.Text = "Turn Order";
+            // 
+            // tableLayoutPanel35
+            // 
+            tableLayoutPanel35.ColumnCount = 1;
+            tableLayoutPanel35.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel35.Controls.Add(turnsShuffle, 0, 2);
+            tableLayoutPanel35.Controls.Add(turnsPlayers, 0, 0);
+            tableLayoutPanel35.Controls.Add(turnsEnemies, 0, 1);
+            tableLayoutPanel35.Dock = DockStyle.Fill;
+            tableLayoutPanel35.Location = new Point(3, 19);
+            tableLayoutPanel35.Name = "tableLayoutPanel35";
+            tableLayoutPanel35.RowCount = 3;
+            tableLayoutPanel35.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel35.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel35.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel35.Size = new Size(196, 69);
+            tableLayoutPanel35.TabIndex = 0;
+            // 
+            // turnsShuffle
+            // 
+            turnsShuffle.Dock = DockStyle.Fill;
+            turnsShuffle.Location = new Point(3, 46);
+            turnsShuffle.Margin = new Padding(3, 0, 3, 0);
+            turnsShuffle.Name = "turnsShuffle";
+            turnsShuffle.Size = new Size(190, 23);
+            turnsShuffle.TabIndex = 0;
+            turnsShuffle.Text = "Shuffle Turn Order";
+            turnsShuffle.UseVisualStyleBackColor = true;
+            turnsShuffle.Click += TurnsShuffle_Click;
+            // 
+            // turnsPlayers
+            // 
+            turnsPlayers.AutoSize = true;
+            turnsPlayers.Dock = DockStyle.Fill;
+            turnsPlayers.Location = new Point(3, 0);
+            turnsPlayers.Name = "turnsPlayers";
+            turnsPlayers.Size = new Size(190, 23);
+            turnsPlayers.TabIndex = 1;
+            turnsPlayers.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // turnsEnemies
+            // 
+            turnsEnemies.AutoSize = true;
+            turnsEnemies.Dock = DockStyle.Fill;
+            turnsEnemies.Location = new Point(3, 23);
+            turnsEnemies.Name = "turnsEnemies";
+            turnsEnemies.Size = new Size(190, 23);
+            turnsEnemies.TabIndex = 2;
+            turnsEnemies.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // combatMisc
+            // 
+            combatMisc.Controls.Add(textMisc);
+            combatMisc.Dock = DockStyle.Fill;
+            combatMisc.Location = new Point(3, 100);
+            combatMisc.Name = "combatMisc";
+            combatMisc.Size = new Size(202, 92);
+            combatMisc.TabIndex = 1;
+            combatMisc.TabStop = false;
+            combatMisc.Text = "Notes/Modifiers";
+            // 
+            // textMisc
+            // 
+            textMisc.AcceptsReturn = true;
+            textMisc.Dock = DockStyle.Fill;
+            textMisc.Location = new Point(3, 19);
+            textMisc.Multiline = true;
+            textMisc.Name = "textMisc";
+            textMisc.Size = new Size(196, 70);
+            textMisc.TabIndex = 0;
             // 
             // tableLayoutPanel9
             // 
@@ -2045,6 +2564,10 @@
             comboBox1.Size = new Size(194, 23);
             comboBox1.TabIndex = 0;
             // 
+            // openEnemyDialog
+            // 
+            openEnemyDialog.FileOk += OpenEnemyDialog_FileOk;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -2098,12 +2621,37 @@
             tableLayoutPanel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericParty).EndInit();
             tableLayoutPanel10.ResumeLayout(false);
+            tableLayoutPanel7.ResumeLayout(false);
+            groupEnemies.ResumeLayout(false);
+            tableLayoutPanel27.ResumeLayout(false);
+            tableLayoutPanel28.ResumeLayout(false);
+            tabEnemies.ResumeLayout(false);
+            tabBasicEnemies.ResumeLayout(false);
+            tabMultipurpose.ResumeLayout(false);
+            tabGeneral.ResumeLayout(false);
+            tableLayoutPanel26.ResumeLayout(false);
             groupInventory.ResumeLayout(false);
             groupStats.ResumeLayout(false);
-            statisticsLayout.ResumeLayout(false);
-            tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
+            tabRNG.ResumeLayout(false);
+            tableLayoutPanel30.ResumeLayout(false);
+            combatGroupDamage.ResumeLayout(false);
+            tableLayoutPanel32.ResumeLayout(false);
+            tableLayoutPanel33.ResumeLayout(false);
+            tableLayoutPanel33.PerformLayout();
+            tableLayoutPanel34.ResumeLayout(false);
+            tableLayoutPanel34.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)damageAttackDynamic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)damageMultiplierDynamic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)damageEvasionDynamic).EndInit();
+            ((System.ComponentModel.ISupportInitialize)damageDefenseDynamic).EndInit();
+            tableLayoutPanel31.ResumeLayout(false);
+            groupTurns.ResumeLayout(false);
+            tableLayoutPanel35.ResumeLayout(false);
+            tableLayoutPanel35.PerformLayout();
+            combatMisc.ResumeLayout(false);
+            combatMisc.PerformLayout();
             tableLayoutPanel9.ResumeLayout(false);
             tableLayoutPanel16.ResumeLayout(false);
             tableLayoutPanel16.PerformLayout();
@@ -2120,12 +2668,10 @@
         private GroupBox alliesGroup;
         private GroupBox groupEnemies;
         private GroupBox groupStats;
-        private GroupBox groupInventory;
         private OpenFileDialog openFileDialog;
         private ListBox listInventory;
         private TableLayoutPanel alliesLayout;
         private ComboBox allies1;
-        private TableLayoutPanel statisticsLayout;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutPanel6;
@@ -2145,7 +2691,6 @@
         private TableLayoutPanel tableLayoutPanel11;
         private TableLayoutPanel tableLayoutPanel10;
         private TableLayoutPanel tableLayoutPanel12;
-        private ProgressBar partyMeter;
         private ProgressBar partyOverflow;
         private NumericUpDown numericParty;
         private TableLayoutPanel tableLayoutPanel13;
@@ -2260,5 +2805,46 @@
         private Label player3HeadGear;
         private Label player3Weapon;
         private ComboBox allies3;
+        private TabControl tabMultipurpose;
+        private TabPage tabGeneral;
+        private TableLayoutPanel tableLayoutPanel26;
+        private GroupBox groupInventory;
+        private TabPage tabRNG;
+        private TableLayoutPanel tableLayoutPanel27;
+        private TableLayoutPanel tableLayoutPanel28;
+        private Button loadEnemy;
+        private Button unloadEnemy;
+        private TabControl tabEnemies;
+        private TabPage tabBasicEnemies;
+        private TabPage tabUnique;
+        private TableLayoutPanel tableLayoutPanel29;
+        private OpenFileDialog openEnemyDialog;
+        private TableLayoutPanel tableLayoutPanel30;
+        private GroupBox combatGroupDamage;
+        private TableLayoutPanel tableLayoutPanel31;
+        private TableLayoutPanel tableLayoutPanel32;
+        private TableLayoutPanel tableLayoutPanel33;
+        private Label damageDamage;
+        private TableLayoutPanel tableLayoutPanel34;
+        private Label damageAttack;
+        private Label damageMultiplier;
+        private Label damageDefense;
+        private Label damageEvasion;
+        private NumericUpDown damageAttackDynamic;
+        private NumericUpDown damageMultiplierDynamic;
+        private NumericUpDown damageEvasionDynamic;
+        private NumericUpDown damageDefenseDynamic;
+        private Label damageDamageDynamic;
+        private Button damageCalculate;
+        private GroupBox groupTurns;
+        private TableLayoutPanel tableLayoutPanel35;
+        private Button turnsShuffle;
+        private Label turnsPlayers;
+        private Label turnsEnemies;
+        private GroupBox combatMisc;
+        private TextBox textMisc;
+        private ProgressBar partyMeter1;
+        private ProgressBar partyMeter3;
+        private ProgressBar partyMeter2;
     }
 }

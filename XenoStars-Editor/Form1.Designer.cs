@@ -438,7 +438,7 @@
             label6.Name = "label6";
             label6.Size = new Size(84, 29);
             label6.TabIndex = 15;
-            label6.Text = "Base Damage";
+            label6.Text = "Base Attack";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textDamage
@@ -457,7 +457,7 @@
             setDamage.Name = "setDamage";
             setDamage.Size = new Size(89, 23);
             setDamage.TabIndex = 17;
-            setDamage.Text = "Set Damage";
+            setDamage.Text = "Set Attack";
             setDamage.UseVisualStyleBackColor = true;
             setDamage.Click += SetDamage_Click;
             // 
