@@ -34,6 +34,7 @@
             groupBox1 = new GroupBox();
             tableLayoutPanel8 = new TableLayoutPanel();
             tableLayoutPanel7 = new TableLayoutPanel();
+            textDefense = new NumericUpDown();
             label1 = new Label();
             textName = new TextBox();
             label2 = new Label();
@@ -55,6 +56,8 @@
             checkLinear = new CheckBox();
             label7 = new Label();
             setLinear = new Button();
+            label13 = new Label();
+            setDefense = new Button();
             tableLayoutPanel9 = new TableLayoutPanel();
             groupBox2 = new GroupBox();
             tableLayoutPanel10 = new TableLayoutPanel();
@@ -127,6 +130,7 @@
             groupBox1.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)textDefense).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textHP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textAP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textDamage).BeginInit();
@@ -210,7 +214,7 @@
             tableLayoutPanel8.Location = new Point(3, 19);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 2;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 209F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 238F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel8.Size = new Size(285, 416);
             tableLayoutPanel8.TabIndex = 1;
@@ -221,6 +225,7 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel7.Controls.Add(textDefense, 1, 7);
             tableLayoutPanel7.Controls.Add(label1, 0, 0);
             tableLayoutPanel7.Controls.Add(textName, 1, 0);
             tableLayoutPanel7.Controls.Add(label2, 0, 1);
@@ -242,10 +247,12 @@
             tableLayoutPanel7.Controls.Add(checkLinear, 1, 6);
             tableLayoutPanel7.Controls.Add(label7, 0, 6);
             tableLayoutPanel7.Controls.Add(setLinear, 2, 6);
+            tableLayoutPanel7.Controls.Add(label13, 0, 7);
+            tableLayoutPanel7.Controls.Add(setDefense, 2, 7);
             tableLayoutPanel7.Dock = DockStyle.Fill;
             tableLayoutPanel7.Location = new Point(3, 3);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 7;
+            tableLayoutPanel7.RowCount = 8;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
@@ -253,8 +260,18 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel7.Size = new Size(279, 203);
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel7.Size = new Size(279, 232);
             tableLayoutPanel7.TabIndex = 0;
+            // 
+            // textDefense
+            // 
+            textDefense.Dock = DockStyle.Fill;
+            textDefense.Location = new Point(93, 206);
+            textDefense.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            textDefense.Name = "textDefense";
+            textDefense.Size = new Size(88, 23);
+            textDefense.TabIndex = 22;
             // 
             // label1
             // 
@@ -478,6 +495,28 @@
             setLinear.UseVisualStyleBackColor = true;
             setLinear.Click += SetLinear_Click;
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Dock = DockStyle.Fill;
+            label13.Location = new Point(3, 203);
+            label13.Name = "label13";
+            label13.Size = new Size(84, 29);
+            label13.TabIndex = 21;
+            label13.Text = "Defense";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // setDefense
+            // 
+            setDefense.Dock = DockStyle.Fill;
+            setDefense.Location = new Point(187, 206);
+            setDefense.Name = "setDefense";
+            setDefense.Size = new Size(89, 23);
+            setDefense.TabIndex = 23;
+            setDefense.Text = "Set Defense";
+            setDefense.UseVisualStyleBackColor = true;
+            setDefense.Click += SetDefense_Click;
+            // 
             // tableLayoutPanel9
             // 
             tableLayoutPanel9.ColumnCount = 2;
@@ -486,11 +525,11 @@
             tableLayoutPanel9.Controls.Add(groupBox2, 0, 0);
             tableLayoutPanel9.Controls.Add(groupBox3, 1, 0);
             tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(3, 212);
+            tableLayoutPanel9.Location = new Point(3, 241);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 1;
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel9.Size = new Size(279, 201);
+            tableLayoutPanel9.Size = new Size(279, 172);
             tableLayoutPanel9.TabIndex = 1;
             // 
             // groupBox2
@@ -499,7 +538,7 @@
             groupBox2.Dock = DockStyle.Fill;
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(133, 195);
+            groupBox2.Size = new Size(133, 166);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Equipment";
@@ -515,32 +554,29 @@
             tableLayoutPanel10.Margin = new Padding(0);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
             tableLayoutPanel10.RowCount = 2;
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 122F));
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 116F));
             tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.Size = new Size(127, 173);
+            tableLayoutPanel10.Size = new Size(127, 144);
             tableLayoutPanel10.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Controls.Add(textWeapon, 0, 0);
             tableLayoutPanel2.Controls.Add(textHead, 0, 1);
             tableLayoutPanel2.Controls.Add(textTorso, 0, 2);
             tableLayoutPanel2.Controls.Add(textLegs, 0, 3);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 4;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel2.Size = new Size(121, 116);
+            tableLayoutPanel2.Size = new Size(127, 116);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // textWeapon
@@ -549,7 +585,7 @@
             textWeapon.Location = new Point(3, 3);
             textWeapon.Name = "textWeapon";
             textWeapon.PlaceholderText = "Weapon";
-            textWeapon.Size = new Size(115, 23);
+            textWeapon.Size = new Size(121, 23);
             textWeapon.TabIndex = 0;
             // 
             // textHead
@@ -558,7 +594,7 @@
             textHead.Location = new Point(3, 32);
             textHead.Name = "textHead";
             textHead.PlaceholderText = "Head Gear";
-            textHead.Size = new Size(115, 23);
+            textHead.Size = new Size(121, 23);
             textHead.TabIndex = 1;
             // 
             // textTorso
@@ -567,7 +603,7 @@
             textTorso.Location = new Point(3, 61);
             textTorso.Name = "textTorso";
             textTorso.PlaceholderText = "Torso Gear";
-            textTorso.Size = new Size(115, 23);
+            textTorso.Size = new Size(121, 23);
             textTorso.TabIndex = 2;
             // 
             // textLegs
@@ -576,15 +612,16 @@
             textLegs.Location = new Point(3, 90);
             textLegs.Name = "textLegs";
             textLegs.PlaceholderText = "Legs Gear";
-            textLegs.Size = new Size(115, 23);
+            textLegs.Size = new Size(121, 23);
             textLegs.TabIndex = 3;
             // 
             // setEquip
             // 
             setEquip.Dock = DockStyle.Fill;
-            setEquip.Location = new Point(3, 125);
+            setEquip.Location = new Point(0, 116);
+            setEquip.Margin = new Padding(0);
             setEquip.Name = "setEquip";
-            setEquip.Size = new Size(121, 45);
+            setEquip.Size = new Size(127, 28);
             setEquip.TabIndex = 1;
             setEquip.Text = "Set Equipment";
             setEquip.UseVisualStyleBackColor = true;
@@ -596,7 +633,7 @@
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Location = new Point(142, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(134, 195);
+            groupBox3.Size = new Size(134, 166);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Arts";
@@ -612,12 +649,9 @@
             tableLayoutPanel11.Margin = new Padding(0);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
             tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 122F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 116F));
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel11.Size = new Size(128, 173);
+            tableLayoutPanel11.Size = new Size(128, 144);
             tableLayoutPanel11.TabIndex = 1;
             // 
             // tableLayoutPanel12
@@ -634,14 +668,15 @@
             tableLayoutPanel12.Controls.Add(art3Cost, 1, 2);
             tableLayoutPanel12.Controls.Add(art4Cost, 1, 3);
             tableLayoutPanel12.Dock = DockStyle.Fill;
-            tableLayoutPanel12.Location = new Point(3, 3);
+            tableLayoutPanel12.Location = new Point(0, 0);
+            tableLayoutPanel12.Margin = new Padding(0);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.RowCount = 4;
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tableLayoutPanel12.Size = new Size(122, 116);
+            tableLayoutPanel12.Size = new Size(128, 116);
             tableLayoutPanel12.TabIndex = 0;
             // 
             // art1
@@ -650,7 +685,7 @@
             art1.Location = new Point(3, 3);
             art1.Name = "art1";
             art1.PlaceholderText = "Art 1";
-            art1.Size = new Size(71, 23);
+            art1.Size = new Size(77, 23);
             art1.TabIndex = 0;
             // 
             // art2
@@ -659,7 +694,7 @@
             art2.Location = new Point(3, 32);
             art2.Name = "art2";
             art2.PlaceholderText = "Art 2";
-            art2.Size = new Size(71, 23);
+            art2.Size = new Size(77, 23);
             art2.TabIndex = 1;
             // 
             // art3
@@ -668,7 +703,7 @@
             art3.Location = new Point(3, 61);
             art3.Name = "art3";
             art3.PlaceholderText = "Art 3";
-            art3.Size = new Size(71, 23);
+            art3.Size = new Size(77, 23);
             art3.TabIndex = 2;
             // 
             // art4
@@ -677,13 +712,13 @@
             art4.Location = new Point(3, 90);
             art4.Name = "art4";
             art4.PlaceholderText = "Art 4";
-            art4.Size = new Size(71, 23);
+            art4.Size = new Size(77, 23);
             art4.TabIndex = 3;
             // 
             // art1Cost
             // 
             art1Cost.Dock = DockStyle.Fill;
-            art1Cost.Location = new Point(80, 3);
+            art1Cost.Location = new Point(86, 3);
             art1Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art1Cost.Name = "art1Cost";
             art1Cost.Size = new Size(39, 23);
@@ -692,7 +727,7 @@
             // art2Cost
             // 
             art2Cost.Dock = DockStyle.Fill;
-            art2Cost.Location = new Point(80, 32);
+            art2Cost.Location = new Point(86, 32);
             art2Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art2Cost.Name = "art2Cost";
             art2Cost.Size = new Size(39, 23);
@@ -701,7 +736,7 @@
             // art3Cost
             // 
             art3Cost.Dock = DockStyle.Fill;
-            art3Cost.Location = new Point(80, 61);
+            art3Cost.Location = new Point(86, 61);
             art3Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art3Cost.Name = "art3Cost";
             art3Cost.Size = new Size(39, 23);
@@ -710,7 +745,7 @@
             // art4Cost
             // 
             art4Cost.Dock = DockStyle.Fill;
-            art4Cost.Location = new Point(80, 90);
+            art4Cost.Location = new Point(86, 90);
             art4Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art4Cost.Name = "art4Cost";
             art4Cost.Size = new Size(39, 23);
@@ -719,9 +754,10 @@
             // setArts
             // 
             setArts.Dock = DockStyle.Fill;
-            setArts.Location = new Point(3, 125);
+            setArts.Location = new Point(0, 116);
+            setArts.Margin = new Padding(0);
             setArts.Name = "setArts";
-            setArts.Size = new Size(122, 45);
+            setArts.Size = new Size(128, 28);
             setArts.TabIndex = 1;
             setArts.Text = "Set Arts";
             setArts.UseVisualStyleBackColor = true;
@@ -1289,6 +1325,7 @@
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)textDefense).EndInit();
             ((System.ComponentModel.ISupportInitialize)textHP).EndInit();
             ((System.ComponentModel.ISupportInitialize)textAP).EndInit();
             ((System.ComponentModel.ISupportInitialize)textDamage).EndInit();
@@ -1423,5 +1460,8 @@
         private Button setChapter;
         private Button setLocation;
         private Button SetMoney;
+        private NumericUpDown textDefense;
+        private Label label13;
+        private Button setDefense;
     }
 }

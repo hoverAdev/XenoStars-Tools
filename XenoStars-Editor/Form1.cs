@@ -373,6 +373,11 @@ namespace XenoStars_Editor
                 inventoryList.Items.RemoveAt(inventoryList.SelectedIndex);
             }
         }
+
+        private void SetDefense_Click(object sender, EventArgs e)
+        {
+            mainSave.Characters[charactersList.SelectedIndex].Defense = Convert.ToUInt16(textDefense.Value);
+        }
     }
 
     public class SaveFile
@@ -442,9 +447,9 @@ namespace XenoStars_Editor
             Defense = 0;
             Weapon = "Iron Blade";
             WeaponLinearScaling = false;
-            HeadGear = "Nothing";
+            HeadGear = "None";
             TorsoGear = "Worn Dress";
-            LegsGear = "Nothing";
+            LegsGear = "None";
             Arts = new() {
                 new Art(),
                 new Art() { Name="", Cost= 0 },

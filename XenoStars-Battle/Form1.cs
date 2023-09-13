@@ -73,14 +73,38 @@ namespace XenoStars_Battle
             listInventory.EndUpdate();
 
             allies1.BeginUpdate();
+            allies2.BeginUpdate();
+            allies3.BeginUpdate();
             allies1.Items.Clear();
+            allies2.Items.Clear();
+            allies3.Items.Clear();
             mainSave.Characters.Clear();
             foreach (Character character in deserialize.Characters)
             {
                 mainSave.Characters.Add(character);
                 allies1.Items.Add(character.Name);
+                allies2.Items.Add(character.Name);
+                allies3.Items.Add(character.Name);
             }
             allies1.EndUpdate();
+            allies2.EndUpdate();
+            allies3.EndUpdate();
+        }
+
+        private void FileReload_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(openFileDialog.FileName))
+            {
+                var cancelEvent = new CancelEventArgs()
+                {
+                    Cancel = false
+                };
+                OpenFileDialog_FileOk(sender, cancelEvent);
+            }
+            else
+            {
+                openFileDialog.ShowDialog();
+            }
         }
 
         private void NumericParty_ValueChanged(object sender, EventArgs e)
@@ -107,6 +131,7 @@ namespace XenoStars_Battle
 
             player1MaxHPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseHP * multiplier));
             player1HPDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseHP * multiplier));
+            player1HPDynamic.Value = player1HPDynamic.Maximum;
 
             if (currentPlayer.EtherType)
             {
@@ -118,9 +143,11 @@ namespace XenoStars_Battle
                 player1MaxAP.Text = "Max AP";
                 player1AP.Text = "AP";
             }
-            player1MaxAPDynamic.Text = Convert.ToString(currentPlayer.BaseAP * GetAPMultiplier());
-            player1APDynamic.Maximum = Convert.ToDecimal(currentPlayer.BaseAP * GetAPMultiplier());
+            player1MaxAPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
+            player1APDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
             player1APDynamic.Value = player1APDynamic.Maximum;
+
+            player1DefenseDynamic.Text = Convert.ToString(currentPlayer.Defense);
 
             if (currentPlayer.WeaponLinearScaling)
             {
@@ -178,21 +205,180 @@ namespace XenoStars_Battle
             player1LegsGear.Text = currentPlayer.LegsGear;
         }
 
-        private void FileReload_Click(object sender, EventArgs e)
+        private void Allies2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (File.Exists(openFileDialog.FileName))
+            var currentPlayer = mainSave.Characters[allies2.SelectedIndex];
+            var levelDouble = Convert.ToDouble(mainSave.Level);
+            double multiplier = Math.Ceiling(((Math.Log10(levelDouble)) + (Math.Pow((levelDouble * 0.1), 2)) + 1) * 4) / 4;
+
+            player2PlayerDynamic.Text = currentPlayer.Player;
+
+            player2MaxHPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseHP * multiplier));
+            player2HPDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseHP * multiplier));
+            player2HPDynamic.Value = player2HPDynamic.Maximum;
+
+            if (currentPlayer.EtherType)
             {
-                var cancelEvent = new CancelEventArgs()
-                {
-                    Cancel = false
-                };
-                OpenFileDialog_FileOk(sender, cancelEvent);
+                player2MaxAP.Text = "Max EP";
+                player2AP.Text = "EP";
             }
             else
             {
-                MessageBox.Show($"File {openFileDialog.FileName} doesn't exist!", "Error", MessageBoxButtons.OK);
+                player2MaxAP.Text = "Max AP";
+                player2AP.Text = "AP";
             }
+            player2MaxAPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
+            player2APDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
+            player2APDynamic.Value = player2APDynamic.Maximum;
+
+            player2DefenseDynamic.Text = Convert.ToString(currentPlayer.Defense);
+
+            if (currentPlayer.WeaponLinearScaling)
+            {
+                player2DamageDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseDMG * multiplier * mainSave.Level));
+            }
+            else
+            {
+                player2DamageDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseDMG * multiplier));
+            }
+
+            if (currentPlayer.Arts.Count > 0)
+            {
+                player2Art1.Text = currentPlayer.Arts[0].Name;
+                player2Art1Cost.Text = Convert.ToString(currentPlayer.Arts[0].Cost);
+            }
+            else
+            {
+                player2Art1.Text = "";
+                player2Art1Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 1)
+            {
+                player2Art2.Text = currentPlayer.Arts[1].Name;
+                player2Art2Cost.Text = Convert.ToString(currentPlayer.Arts[1].Cost);
+            }
+            else
+            {
+                player2Art2.Text = "";
+                player2Art2Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 2)
+            {
+                player2Art3.Text = currentPlayer.Arts[2].Name;
+                player2Art3Cost.Text = Convert.ToString(currentPlayer.Arts[2].Cost);
+            }
+            else
+            {
+                player2Art3.Text = "";
+                player2Art3Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 3)
+            {
+                player2Art4.Text = currentPlayer.Arts[3].Name;
+                player2Art4Cost.Text = Convert.ToString(currentPlayer.Arts[3].Cost);
+            }
+            else
+            {
+                player2Art4.Text = "";
+                player2Art4Cost.Text = "0";
+            }
+
+            player2Weapon.Text = currentPlayer.Weapon;
+            player2HeadGear.Text = currentPlayer.HeadGear;
+            player2TorsoGear.Text = currentPlayer.TorsoGear;
+            player2LegsGear.Text = currentPlayer.LegsGear;
         }
+
+        private void Allies3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var currentPlayer = mainSave.Characters[allies1.SelectedIndex];
+            var levelDouble = Convert.ToDouble(mainSave.Level);
+            double multiplier = Math.Ceiling(((Math.Log10(levelDouble)) + (Math.Pow((levelDouble * 0.1), 2)) + 1) * 4) / 4;
+
+            player3PlayerDynamic.Text = currentPlayer.Player;
+
+            player3MaxHPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseHP * multiplier));
+            player3HPDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseHP * multiplier));
+            player3HPDynamic.Value = player3HPDynamic.Maximum;
+
+            if (currentPlayer.EtherType)
+            {
+                player3MaxAP.Text = "Max EP";
+                player3AP.Text = "EP";
+            }
+            else
+            {
+                player3MaxAP.Text = "Max AP";
+                player3AP.Text = "AP";
+            }
+            player3MaxAPDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
+            player3APDynamic.Maximum = Convert.ToDecimal(Math.Ceiling(currentPlayer.BaseAP * GetAPMultiplier()));
+            player3APDynamic.Value = player3APDynamic.Maximum;
+
+            player3DefenseDynamic.Text = Convert.ToString(currentPlayer.Defense);
+
+            if (currentPlayer.WeaponLinearScaling)
+            {
+                player3DamageDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseDMG * multiplier * mainSave.Level));
+            }
+            else
+            {
+                player3DamageDynamic.Text = Convert.ToString(Math.Ceiling(currentPlayer.BaseDMG * multiplier));
+            }
+
+            if (currentPlayer.Arts.Count > 0)
+            {
+                player3Art1.Text = currentPlayer.Arts[0].Name;
+                player3Art1Cost.Text = Convert.ToString(currentPlayer.Arts[0].Cost);
+            }
+            else
+            {
+                player3Art1.Text = "";
+                player3Art1Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 1)
+            {
+                player3Art2.Text = currentPlayer.Arts[1].Name;
+                player3Art2Cost.Text = Convert.ToString(currentPlayer.Arts[1].Cost);
+            }
+            else
+            {
+                player3Art2.Text = "";
+                player3Art2Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 2)
+            {
+                player3Art3.Text = currentPlayer.Arts[2].Name;
+                player3Art3Cost.Text = Convert.ToString(currentPlayer.Arts[2].Cost);
+            }
+            else
+            {
+                player3Art3.Text = "";
+                player3Art3Cost.Text = "0";
+            }
+            if (currentPlayer.Arts.Count > 3)
+            {
+                player3Art4.Text = currentPlayer.Arts[3].Name;
+                player3Art4Cost.Text = Convert.ToString(currentPlayer.Arts[3].Cost);
+            }
+            else
+            {
+                player3Art4.Text = "";
+                player3Art4Cost.Text = "0";
+            }
+
+            player3Weapon.Text = currentPlayer.Weapon;
+            player3HeadGear.Text = currentPlayer.HeadGear;
+            player3TorsoGear.Text = currentPlayer.TorsoGear;
+            player3LegsGear.Text = currentPlayer.LegsGear;
+        }
+
+        private void MonadoArtNumber_ValueChanged(object sender, EventArgs e)
+        {
+            monadoArtBar.Value = Convert.ToByte(monadoArtNumber.Value);
+        }
+
+
     }
 
     public class SaveFile
@@ -262,9 +448,9 @@ namespace XenoStars_Battle
             Defense = 0;
             Weapon = "Iron Blade";
             WeaponLinearScaling = false;
-            HeadGear = "Nothing";
+            HeadGear = "None";
             TorsoGear = "Worn Dress";
-            LegsGear = "Nothing";
+            LegsGear = "None";
             Arts = new() {
                 new Art()
             };
