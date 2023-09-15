@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
+using Windows.Media.Playback;
 
 namespace XenoStars_Battle
 {
@@ -50,6 +51,10 @@ namespace XenoStars_Battle
             mainSave.Experience = deserialize.Experience;
             labelEXPDynamic.Text = deserialize.Experience.ToString();
 
+            var level = Convert.ToDouble(mainSave.Level) + 1;
+            var nextExp = Math.Ceiling(((10 * Math.Pow(level, 2)) + Math.Floor(Math.Pow(2, (level / 6)))) / 2);
+            labelNextDynamic.Text = Convert.ToString(nextExp - mainSave.Experience);
+
             mainSave.Chapter = Convert.ToByte(deserialize.Chapter);
             labelChapterDynamic.Text = deserialize.Chapter.ToString();
 
@@ -76,13 +81,20 @@ namespace XenoStars_Battle
             allies1.BeginUpdate();
             allies2.BeginUpdate();
             allies3.BeginUpdate();
+
+            var a1Index = allies1.SelectedIndex;
+            var a2Index = allies2.SelectedIndex;
+            var a3Index = allies3.SelectedIndex;
+
             allies1.SelectedIndex = 0;
             allies2.SelectedIndex = 0;
             allies3.SelectedIndex = 0;
+
             allies1.Items.Clear();
             allies2.Items.Clear();
             allies3.Items.Clear();
             mainSave.Characters.Clear();
+
             foreach (Character character in deserialize.Characters)
             {
                 mainSave.Characters.Add(character);
@@ -90,6 +102,20 @@ namespace XenoStars_Battle
                 allies2.Items.Add(character.Name);
                 allies3.Items.Add(character.Name);
             }
+
+            if (a1Index < allies1.Items.Count)
+            {
+                allies1.SelectedIndex = a1Index;
+            }
+            if (a2Index < allies2.Items.Count)
+            {
+                allies2.SelectedIndex = a2Index;
+            }
+            if (a3Index < allies3.Items.Count)
+            {
+                allies3.SelectedIndex = a3Index;
+            }
+
             allies1.EndUpdate();
             allies2.EndUpdate();
             allies3.EndUpdate();
@@ -145,6 +171,10 @@ namespace XenoStars_Battle
 
         private void Allies1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (allies1.SelectedIndex < 0)
+            {
+                return;
+            }
             var currentPlayer = mainSave.Characters[allies1.SelectedIndex];
             var levelDouble = Convert.ToDouble(mainSave.Level);
             double multiplier = Math.Ceiling(((Math.Log10(levelDouble)) + (Math.Pow((levelDouble * 0.1), 2)) + 1) * 4) / 4;
@@ -407,8 +437,72 @@ namespace XenoStars_Battle
 
         private void OpenEnemyDialog_FileOk(object sender, CancelEventArgs e)
         {
-            var raw = File.ReadAllText(openFileDialog.FileName);
+            var raw = File.ReadAllText(openEnemyDialog.FileName);
             enemySave = JsonSerializer.Deserialize<SaveFile>(raw);
+
+            var enemies = enemySave.Characters;
+
+            if (enemies.Count > 1)
+            {
+                enemy1NameDynamic.Text = enemies[1].Name;
+                enemy1LevelDynamic.Text = enemies[1].Player;
+                enemy1HPDynamic.Maximum = enemies[1].BaseHP;
+                enemy1HPDynamic.Value = enemy1HPDynamic.Maximum;
+                enemy1MaxHPDynamic.Text = Convert.ToString(enemies[1].BaseHP);
+                enemy1AttackDynamic.Text = Convert.ToString(enemies[1].BaseDMG);
+                enemy1DefenseDynamic.Text = Convert.ToString(enemies[1].Defense);
+            }
+            else
+            {
+                enemy1NameDynamic.Text = "";
+                enemy1LevelDynamic.Text = "1";
+                enemy1HPDynamic.Maximum = 0;
+                enemy1HPDynamic.Value = enemy1HPDynamic.Maximum;
+                enemy1MaxHPDynamic.Text = "0";
+                enemy1AttackDynamic.Text = "0";
+                enemy1DefenseDynamic.Text = "0";
+            }
+
+            if (enemies.Count > 2)
+            {
+                enemy2NameDynamic.Text = enemies[2].Name;
+                enemy2LevelDynamic.Text = enemies[2].Player;
+                enemy2HPDynamic.Maximum = enemies[2].BaseHP;
+                enemy2HPDynamic.Value = enemy2HPDynamic.Maximum;
+                enemy2MaxHPDynamic.Text = Convert.ToString(enemies[2].BaseHP);
+                enemy2AttackDynamic.Text = Convert.ToString(enemies[2].BaseDMG);
+                enemy2DefenseDynamic.Text = Convert.ToString(enemies[2].Defense);
+            }
+            else
+            {
+                enemy2NameDynamic.Text = "";
+                enemy2LevelDynamic.Text = "1";
+                enemy2HPDynamic.Maximum = 0;
+                enemy2HPDynamic.Value = enemy2HPDynamic.Maximum;
+                enemy2MaxHPDynamic.Text = "0";
+                enemy2AttackDynamic.Text = "0";
+                enemy2DefenseDynamic.Text = "0";
+            }
+            if (enemies.Count > 3)
+            {
+                enemy3NameDynamic.Text = enemies[3].Name;
+                enemy3LevelDynamic.Text = enemies[3].Player;
+                enemy3HPDynamic.Maximum = enemies[3].BaseHP;
+                enemy3HPDynamic.Value = enemy3HPDynamic.Maximum;
+                enemy3MaxHPDynamic.Text = Convert.ToString(enemies[3].BaseHP);
+                enemy3AttackDynamic.Text = Convert.ToString(enemies[3].BaseDMG);
+                enemy3DefenseDynamic.Text = Convert.ToString(enemies[3].Defense);
+            }
+            else
+            {
+                enemy3NameDynamic.Text = "";
+                enemy3LevelDynamic.Text = "1";
+                enemy3HPDynamic.Maximum = 0;
+                enemy3HPDynamic.Value = enemy3HPDynamic.Maximum;
+                enemy3MaxHPDynamic.Text = "0";
+                enemy3AttackDynamic.Text = "0";
+                enemy3DefenseDynamic.Text = "0";
+            }
         }
 
         private void DamageCalculate_Click(object sender, EventArgs e)
@@ -423,14 +517,36 @@ namespace XenoStars_Battle
 
             if (random.Next(1, 21) > evasion)
             {
+                var variance = Convert.ToDouble(random.Next(1, 21));
+
+                variance -= 10;
+
+                if (variance > 0)
+                {
+                    variance *= 0.01;
+                    variance += 1;
+
+                    attack = Convert.ToDecimal(Math.Ceiling(Convert.ToDouble(attack) * variance));
+                }
+                else
+                {
+                    variance -= 1;
+                    variance *= 0.01;
+                    variance += 1;
+
+                    attack = Convert.ToDecimal(Math.Ceiling(Convert.ToDouble(attack) * variance));
+                }
+
                 attack *= multiplier;
 
-                if (random.Next(1, 5) == 4)
+                if (random.Next(1, 7) == 1)
                 {
                     attack *= 3;
                 }
 
                 attack -= defense;
+
+                if (attack < 0) { attack = 0; }
 
                 damageDamageDynamic.Text = Convert.ToString(attack);
             }
@@ -484,10 +600,18 @@ namespace XenoStars_Battle
                 turnsPlayers.Text = players;
             }
 
-
-            enemiesList.Add("Enemy 1");
-            enemiesList.Add("Enemy 2");
-            enemiesList.Add("Enemy 3");
+            if (enemy1NameDynamic.Text.Trim() != "")
+            {
+                enemiesList.Add(enemy1NameDynamic.Text);
+            }
+            if (enemy2NameDynamic.Text.Trim() != "")
+            {
+                enemiesList.Add(enemy2NameDynamic.Text);
+            }
+            if (enemy3NameDynamic.Text.Trim() != "")
+            {
+                enemiesList.Add(enemy3NameDynamic.Text);
+            }
 
             while (enemiesList.Count > 1)
             {
@@ -501,7 +625,43 @@ namespace XenoStars_Battle
                 enemiesList.RemoveAt(0);
             }
 
-            turnsEnemies.Text = enemies;
+            if (enemies.Trim() == "")
+            {
+                turnsEnemies.Text = "No enemies selected";
+            }
+            else
+            {
+                turnsEnemies.Text = enemies;
+            }
+        }
+
+        private void UnloadEnemy_Click(object sender, EventArgs e)
+        {
+            enemySave = new();
+
+            enemy1NameDynamic.Text = "";
+            enemy1LevelDynamic.Text = "1";
+            enemy1HPDynamic.Maximum = 0;
+            enemy1HPDynamic.Value = enemy1HPDynamic.Maximum;
+            enemy1MaxHPDynamic.Text = "0";
+            enemy1AttackDynamic.Text = "0";
+            enemy1DefenseDynamic.Text = "0";
+
+            enemy2NameDynamic.Text = "";
+            enemy2LevelDynamic.Text = "1";
+            enemy2HPDynamic.Maximum = 0;
+            enemy2HPDynamic.Value = enemy2HPDynamic.Maximum;
+            enemy2MaxHPDynamic.Text = "0";
+            enemy2AttackDynamic.Text = "0";
+            enemy2DefenseDynamic.Text = "0";
+
+            enemy3NameDynamic.Text = "";
+            enemy3LevelDynamic.Text = "1";
+            enemy3HPDynamic.Maximum = 0;
+            enemy3HPDynamic.Value = enemy3HPDynamic.Maximum;
+            enemy3MaxHPDynamic.Text = "0";
+            enemy3AttackDynamic.Text = "0";
+            enemy3DefenseDynamic.Text = "0";
         }
     }
 
@@ -548,7 +708,7 @@ namespace XenoStars_Battle
     public class Character
     {
         public String Name { get; set; }
-        public String Player { get; set; }
+        public String Player { get; set; } // Player is also used for enemy levels
         public Boolean EtherType { get; set; }
         public Byte BaseHP { get; set; }
         public Byte BaseAP { get; set; }

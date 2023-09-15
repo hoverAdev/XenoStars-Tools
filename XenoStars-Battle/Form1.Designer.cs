@@ -154,6 +154,45 @@
             tabEnemies = new TabControl();
             tabBasicEnemies = new TabPage();
             tableLayoutPanel29 = new TableLayoutPanel();
+            tableLayoutPanel39 = new TableLayoutPanel();
+            enemy3Name = new Label();
+            enemy3Level = new Label();
+            enemy3HP = new Label();
+            enemy3MaxHP = new Label();
+            enemy3Attack = new Label();
+            enemy3Defense = new Label();
+            enemy3HPDynamic = new NumericUpDown();
+            enemy3NameDynamic = new Label();
+            enemy3LevelDynamic = new Label();
+            enemy3MaxHPDynamic = new Label();
+            enemy3AttackDynamic = new Label();
+            enemy3DefenseDynamic = new Label();
+            tableLayoutPanel37 = new TableLayoutPanel();
+            enemy2Name = new Label();
+            enemy2Level = new Label();
+            enemy2HP = new Label();
+            enemy2MaxHP = new Label();
+            enemy2Attack = new Label();
+            enemy2Defense = new Label();
+            enemy2HPDynamic = new NumericUpDown();
+            enemy2NameDynamic = new Label();
+            enemy2LevelDynamic = new Label();
+            enemy2MaxHPDynamic = new Label();
+            enemy2AttackDynamic = new Label();
+            enemy2DefenseDynamic = new Label();
+            tableLayoutPanel36 = new TableLayoutPanel();
+            enemy1Name = new Label();
+            enemy1Level = new Label();
+            enemy1HP = new Label();
+            enemy1MaxHP = new Label();
+            enemy1Attack = new Label();
+            enemy1Defense = new Label();
+            enemy1HPDynamic = new NumericUpDown();
+            enemy1NameDynamic = new Label();
+            enemy1LevelDynamic = new Label();
+            enemy1MaxHPDynamic = new Label();
+            enemy1AttackDynamic = new Label();
+            enemy1DefenseDynamic = new Label();
             tabUnique = new TabPage();
             tabMultipurpose = new TabControl();
             tabGeneral = new TabPage();
@@ -211,6 +250,9 @@
             tableLayoutPanel4 = new TableLayoutPanel();
             comboBox1 = new ComboBox();
             openEnemyDialog = new OpenFileDialog();
+            tableLayoutPanel38 = new TableLayoutPanel();
+            label12 = new Label();
+            label13 = new Label();
             tableLayoutPanel1.SuspendLayout();
             alliesGroup.SuspendLayout();
             alliesLayout.SuspendLayout();
@@ -252,6 +294,13 @@
             tableLayoutPanel28.SuspendLayout();
             tabEnemies.SuspendLayout();
             tabBasicEnemies.SuspendLayout();
+            tableLayoutPanel29.SuspendLayout();
+            tableLayoutPanel39.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy3HPDynamic).BeginInit();
+            tableLayoutPanel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy2HPDynamic).BeginInit();
+            tableLayoutPanel36.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy1HPDynamic).BeginInit();
             tabMultipurpose.SuspendLayout();
             tabGeneral.SuspendLayout();
             tableLayoutPanel26.SuspendLayout();
@@ -278,6 +327,7 @@
             monadoArts.SuspendLayout();
             tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)monadoArtNumber).BeginInit();
+            tableLayoutPanel38.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1843,16 +1893,18 @@
             unloadEnemy.TabIndex = 2;
             unloadEnemy.Text = "Unload Enemies";
             unloadEnemy.UseVisualStyleBackColor = true;
+            unloadEnemy.Click += UnloadEnemy_Click;
             // 
             // tabEnemies
             // 
             tabEnemies.Controls.Add(tabBasicEnemies);
             tabEnemies.Controls.Add(tabUnique);
             tabEnemies.Dock = DockStyle.Fill;
-            tabEnemies.Location = new Point(3, 3);
+            tabEnemies.Location = new Point(0, 0);
+            tabEnemies.Margin = new Padding(0);
             tabEnemies.Name = "tabEnemies";
             tabEnemies.SelectedIndex = 0;
-            tabEnemies.Size = new Size(418, 172);
+            tabEnemies.Size = new Size(424, 178);
             tabEnemies.TabIndex = 1;
             // 
             // tabBasicEnemies
@@ -1861,7 +1913,7 @@
             tabBasicEnemies.Location = new Point(4, 24);
             tabBasicEnemies.Name = "tabBasicEnemies";
             tabBasicEnemies.Padding = new Padding(3);
-            tabBasicEnemies.Size = new Size(410, 144);
+            tabBasicEnemies.Size = new Size(416, 150);
             tabBasicEnemies.TabIndex = 0;
             tabBasicEnemies.Text = "Basic";
             tabBasicEnemies.UseVisualStyleBackColor = true;
@@ -1873,20 +1925,506 @@
             tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel29.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel29.Controls.Add(tableLayoutPanel39, 0, 0);
+            tableLayoutPanel29.Controls.Add(tableLayoutPanel37, 0, 0);
+            tableLayoutPanel29.Controls.Add(tableLayoutPanel36, 0, 0);
             tableLayoutPanel29.Dock = DockStyle.Fill;
             tableLayoutPanel29.Location = new Point(3, 3);
             tableLayoutPanel29.Name = "tableLayoutPanel29";
             tableLayoutPanel29.RowCount = 1;
             tableLayoutPanel29.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel29.Size = new Size(404, 138);
+            tableLayoutPanel29.Size = new Size(410, 144);
             tableLayoutPanel29.TabIndex = 0;
+            // 
+            // tableLayoutPanel39
+            // 
+            tableLayoutPanel39.ColumnCount = 2;
+            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel39.Controls.Add(enemy3Name, 0, 0);
+            tableLayoutPanel39.Controls.Add(enemy3Level, 0, 1);
+            tableLayoutPanel39.Controls.Add(enemy3HP, 0, 2);
+            tableLayoutPanel39.Controls.Add(enemy3MaxHP, 0, 3);
+            tableLayoutPanel39.Controls.Add(enemy3Attack, 0, 4);
+            tableLayoutPanel39.Controls.Add(enemy3Defense, 0, 5);
+            tableLayoutPanel39.Controls.Add(enemy3HPDynamic, 1, 2);
+            tableLayoutPanel39.Controls.Add(enemy3NameDynamic, 1, 0);
+            tableLayoutPanel39.Controls.Add(enemy3LevelDynamic, 1, 1);
+            tableLayoutPanel39.Controls.Add(enemy3MaxHPDynamic, 1, 3);
+            tableLayoutPanel39.Controls.Add(enemy3AttackDynamic, 1, 4);
+            tableLayoutPanel39.Controls.Add(enemy3DefenseDynamic, 1, 5);
+            tableLayoutPanel39.Dock = DockStyle.Fill;
+            tableLayoutPanel39.Location = new Point(276, 4);
+            tableLayoutPanel39.Name = "tableLayoutPanel39";
+            tableLayoutPanel39.RowCount = 6;
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.Size = new Size(130, 136);
+            tableLayoutPanel39.TabIndex = 2;
+            // 
+            // enemy3Name
+            // 
+            enemy3Name.AutoSize = true;
+            enemy3Name.Dock = DockStyle.Fill;
+            enemy3Name.Location = new Point(3, 0);
+            enemy3Name.Name = "enemy3Name";
+            enemy3Name.Size = new Size(59, 22);
+            enemy3Name.TabIndex = 0;
+            enemy3Name.Text = "Name";
+            enemy3Name.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3Level
+            // 
+            enemy3Level.AutoSize = true;
+            enemy3Level.Dock = DockStyle.Fill;
+            enemy3Level.Location = new Point(3, 22);
+            enemy3Level.Name = "enemy3Level";
+            enemy3Level.Size = new Size(59, 22);
+            enemy3Level.TabIndex = 1;
+            enemy3Level.Text = "Level";
+            enemy3Level.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3HP
+            // 
+            enemy3HP.AutoSize = true;
+            enemy3HP.Dock = DockStyle.Fill;
+            enemy3HP.Location = new Point(3, 44);
+            enemy3HP.Name = "enemy3HP";
+            enemy3HP.Size = new Size(59, 22);
+            enemy3HP.TabIndex = 2;
+            enemy3HP.Text = "HP";
+            enemy3HP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3MaxHP
+            // 
+            enemy3MaxHP.AutoSize = true;
+            enemy3MaxHP.Dock = DockStyle.Fill;
+            enemy3MaxHP.Location = new Point(3, 66);
+            enemy3MaxHP.Name = "enemy3MaxHP";
+            enemy3MaxHP.Size = new Size(59, 22);
+            enemy3MaxHP.TabIndex = 3;
+            enemy3MaxHP.Text = "Max HP";
+            enemy3MaxHP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3Attack
+            // 
+            enemy3Attack.AutoSize = true;
+            enemy3Attack.Dock = DockStyle.Fill;
+            enemy3Attack.Location = new Point(3, 88);
+            enemy3Attack.Name = "enemy3Attack";
+            enemy3Attack.Size = new Size(59, 22);
+            enemy3Attack.TabIndex = 4;
+            enemy3Attack.Text = "Attack";
+            enemy3Attack.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3Defense
+            // 
+            enemy3Defense.AutoSize = true;
+            enemy3Defense.Dock = DockStyle.Fill;
+            enemy3Defense.Location = new Point(3, 110);
+            enemy3Defense.Name = "enemy3Defense";
+            enemy3Defense.Size = new Size(59, 26);
+            enemy3Defense.TabIndex = 5;
+            enemy3Defense.Text = "Defense";
+            enemy3Defense.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3HPDynamic
+            // 
+            enemy3HPDynamic.Dock = DockStyle.Fill;
+            enemy3HPDynamic.Location = new Point(68, 44);
+            enemy3HPDynamic.Margin = new Padding(3, 0, 3, 0);
+            enemy3HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
+            enemy3HPDynamic.Name = "enemy3HPDynamic";
+            enemy3HPDynamic.Size = new Size(59, 23);
+            enemy3HPDynamic.TabIndex = 6;
+            // 
+            // enemy3NameDynamic
+            // 
+            enemy3NameDynamic.AutoSize = true;
+            enemy3NameDynamic.Dock = DockStyle.Fill;
+            enemy3NameDynamic.Location = new Point(68, 0);
+            enemy3NameDynamic.Name = "enemy3NameDynamic";
+            enemy3NameDynamic.Size = new Size(59, 22);
+            enemy3NameDynamic.TabIndex = 7;
+            enemy3NameDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3LevelDynamic
+            // 
+            enemy3LevelDynamic.AutoSize = true;
+            enemy3LevelDynamic.Dock = DockStyle.Fill;
+            enemy3LevelDynamic.Location = new Point(68, 22);
+            enemy3LevelDynamic.Name = "enemy3LevelDynamic";
+            enemy3LevelDynamic.Size = new Size(59, 22);
+            enemy3LevelDynamic.TabIndex = 8;
+            enemy3LevelDynamic.Text = "1";
+            enemy3LevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3MaxHPDynamic
+            // 
+            enemy3MaxHPDynamic.AutoSize = true;
+            enemy3MaxHPDynamic.Dock = DockStyle.Fill;
+            enemy3MaxHPDynamic.Location = new Point(68, 66);
+            enemy3MaxHPDynamic.Name = "enemy3MaxHPDynamic";
+            enemy3MaxHPDynamic.Size = new Size(59, 22);
+            enemy3MaxHPDynamic.TabIndex = 9;
+            enemy3MaxHPDynamic.Text = "0";
+            enemy3MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3AttackDynamic
+            // 
+            enemy3AttackDynamic.AutoSize = true;
+            enemy3AttackDynamic.Dock = DockStyle.Fill;
+            enemy3AttackDynamic.Location = new Point(68, 88);
+            enemy3AttackDynamic.Name = "enemy3AttackDynamic";
+            enemy3AttackDynamic.Size = new Size(59, 22);
+            enemy3AttackDynamic.TabIndex = 10;
+            enemy3AttackDynamic.Text = "0";
+            enemy3AttackDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy3DefenseDynamic
+            // 
+            enemy3DefenseDynamic.AutoSize = true;
+            enemy3DefenseDynamic.Dock = DockStyle.Fill;
+            enemy3DefenseDynamic.Location = new Point(68, 110);
+            enemy3DefenseDynamic.Name = "enemy3DefenseDynamic";
+            enemy3DefenseDynamic.Size = new Size(59, 26);
+            enemy3DefenseDynamic.TabIndex = 11;
+            enemy3DefenseDynamic.Text = "0";
+            enemy3DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel37
+            // 
+            tableLayoutPanel37.ColumnCount = 2;
+            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel37.Controls.Add(enemy2Name, 0, 0);
+            tableLayoutPanel37.Controls.Add(enemy2Level, 0, 1);
+            tableLayoutPanel37.Controls.Add(enemy2HP, 0, 2);
+            tableLayoutPanel37.Controls.Add(enemy2MaxHP, 0, 3);
+            tableLayoutPanel37.Controls.Add(enemy2Attack, 0, 4);
+            tableLayoutPanel37.Controls.Add(enemy2Defense, 0, 5);
+            tableLayoutPanel37.Controls.Add(enemy2HPDynamic, 1, 2);
+            tableLayoutPanel37.Controls.Add(enemy2NameDynamic, 1, 0);
+            tableLayoutPanel37.Controls.Add(enemy2LevelDynamic, 1, 1);
+            tableLayoutPanel37.Controls.Add(enemy2MaxHPDynamic, 1, 3);
+            tableLayoutPanel37.Controls.Add(enemy2AttackDynamic, 1, 4);
+            tableLayoutPanel37.Controls.Add(enemy2DefenseDynamic, 1, 5);
+            tableLayoutPanel37.Dock = DockStyle.Fill;
+            tableLayoutPanel37.Location = new Point(140, 4);
+            tableLayoutPanel37.Name = "tableLayoutPanel37";
+            tableLayoutPanel37.RowCount = 6;
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel37.Size = new Size(129, 136);
+            tableLayoutPanel37.TabIndex = 1;
+            // 
+            // enemy2Name
+            // 
+            enemy2Name.AutoSize = true;
+            enemy2Name.Dock = DockStyle.Fill;
+            enemy2Name.Location = new Point(3, 0);
+            enemy2Name.Name = "enemy2Name";
+            enemy2Name.Size = new Size(58, 22);
+            enemy2Name.TabIndex = 0;
+            enemy2Name.Text = "Name";
+            enemy2Name.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2Level
+            // 
+            enemy2Level.AutoSize = true;
+            enemy2Level.Dock = DockStyle.Fill;
+            enemy2Level.Location = new Point(3, 22);
+            enemy2Level.Name = "enemy2Level";
+            enemy2Level.Size = new Size(58, 22);
+            enemy2Level.TabIndex = 1;
+            enemy2Level.Text = "Level";
+            enemy2Level.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2HP
+            // 
+            enemy2HP.AutoSize = true;
+            enemy2HP.Dock = DockStyle.Fill;
+            enemy2HP.Location = new Point(3, 44);
+            enemy2HP.Name = "enemy2HP";
+            enemy2HP.Size = new Size(58, 22);
+            enemy2HP.TabIndex = 2;
+            enemy2HP.Text = "HP";
+            enemy2HP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2MaxHP
+            // 
+            enemy2MaxHP.AutoSize = true;
+            enemy2MaxHP.Dock = DockStyle.Fill;
+            enemy2MaxHP.Location = new Point(3, 66);
+            enemy2MaxHP.Name = "enemy2MaxHP";
+            enemy2MaxHP.Size = new Size(58, 22);
+            enemy2MaxHP.TabIndex = 3;
+            enemy2MaxHP.Text = "Max HP";
+            enemy2MaxHP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2Attack
+            // 
+            enemy2Attack.AutoSize = true;
+            enemy2Attack.Dock = DockStyle.Fill;
+            enemy2Attack.Location = new Point(3, 88);
+            enemy2Attack.Name = "enemy2Attack";
+            enemy2Attack.Size = new Size(58, 22);
+            enemy2Attack.TabIndex = 4;
+            enemy2Attack.Text = "Attack";
+            enemy2Attack.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2Defense
+            // 
+            enemy2Defense.AutoSize = true;
+            enemy2Defense.Dock = DockStyle.Fill;
+            enemy2Defense.Location = new Point(3, 110);
+            enemy2Defense.Name = "enemy2Defense";
+            enemy2Defense.Size = new Size(58, 26);
+            enemy2Defense.TabIndex = 5;
+            enemy2Defense.Text = "Defense";
+            enemy2Defense.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2HPDynamic
+            // 
+            enemy2HPDynamic.Dock = DockStyle.Fill;
+            enemy2HPDynamic.Location = new Point(67, 44);
+            enemy2HPDynamic.Margin = new Padding(3, 0, 3, 0);
+            enemy2HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
+            enemy2HPDynamic.Name = "enemy2HPDynamic";
+            enemy2HPDynamic.Size = new Size(59, 23);
+            enemy2HPDynamic.TabIndex = 6;
+            // 
+            // enemy2NameDynamic
+            // 
+            enemy2NameDynamic.AutoSize = true;
+            enemy2NameDynamic.Dock = DockStyle.Fill;
+            enemy2NameDynamic.Location = new Point(67, 0);
+            enemy2NameDynamic.Name = "enemy2NameDynamic";
+            enemy2NameDynamic.Size = new Size(59, 22);
+            enemy2NameDynamic.TabIndex = 7;
+            enemy2NameDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2LevelDynamic
+            // 
+            enemy2LevelDynamic.AutoSize = true;
+            enemy2LevelDynamic.Dock = DockStyle.Fill;
+            enemy2LevelDynamic.Location = new Point(67, 22);
+            enemy2LevelDynamic.Name = "enemy2LevelDynamic";
+            enemy2LevelDynamic.Size = new Size(59, 22);
+            enemy2LevelDynamic.TabIndex = 8;
+            enemy2LevelDynamic.Text = "1";
+            enemy2LevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2MaxHPDynamic
+            // 
+            enemy2MaxHPDynamic.AutoSize = true;
+            enemy2MaxHPDynamic.Dock = DockStyle.Fill;
+            enemy2MaxHPDynamic.Location = new Point(67, 66);
+            enemy2MaxHPDynamic.Name = "enemy2MaxHPDynamic";
+            enemy2MaxHPDynamic.Size = new Size(59, 22);
+            enemy2MaxHPDynamic.TabIndex = 9;
+            enemy2MaxHPDynamic.Text = "0";
+            enemy2MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2AttackDynamic
+            // 
+            enemy2AttackDynamic.AutoSize = true;
+            enemy2AttackDynamic.Dock = DockStyle.Fill;
+            enemy2AttackDynamic.Location = new Point(67, 88);
+            enemy2AttackDynamic.Name = "enemy2AttackDynamic";
+            enemy2AttackDynamic.Size = new Size(59, 22);
+            enemy2AttackDynamic.TabIndex = 10;
+            enemy2AttackDynamic.Text = "0";
+            enemy2AttackDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy2DefenseDynamic
+            // 
+            enemy2DefenseDynamic.AutoSize = true;
+            enemy2DefenseDynamic.Dock = DockStyle.Fill;
+            enemy2DefenseDynamic.Location = new Point(67, 110);
+            enemy2DefenseDynamic.Name = "enemy2DefenseDynamic";
+            enemy2DefenseDynamic.Size = new Size(59, 26);
+            enemy2DefenseDynamic.TabIndex = 11;
+            enemy2DefenseDynamic.Text = "0";
+            enemy2DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel36
+            // 
+            tableLayoutPanel36.ColumnCount = 2;
+            tableLayoutPanel36.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 58F));
+            tableLayoutPanel36.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel36.Controls.Add(enemy1Name, 0, 0);
+            tableLayoutPanel36.Controls.Add(enemy1Level, 0, 1);
+            tableLayoutPanel36.Controls.Add(enemy1HP, 0, 2);
+            tableLayoutPanel36.Controls.Add(enemy1MaxHP, 0, 3);
+            tableLayoutPanel36.Controls.Add(enemy1Attack, 0, 4);
+            tableLayoutPanel36.Controls.Add(enemy1Defense, 0, 5);
+            tableLayoutPanel36.Controls.Add(enemy1HPDynamic, 1, 2);
+            tableLayoutPanel36.Controls.Add(enemy1NameDynamic, 1, 0);
+            tableLayoutPanel36.Controls.Add(enemy1LevelDynamic, 1, 1);
+            tableLayoutPanel36.Controls.Add(enemy1MaxHPDynamic, 1, 3);
+            tableLayoutPanel36.Controls.Add(enemy1AttackDynamic, 1, 4);
+            tableLayoutPanel36.Controls.Add(enemy1DefenseDynamic, 1, 5);
+            tableLayoutPanel36.Dock = DockStyle.Fill;
+            tableLayoutPanel36.Location = new Point(4, 4);
+            tableLayoutPanel36.Name = "tableLayoutPanel36";
+            tableLayoutPanel36.RowCount = 6;
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
+            tableLayoutPanel36.Size = new Size(129, 136);
+            tableLayoutPanel36.TabIndex = 0;
+            // 
+            // enemy1Name
+            // 
+            enemy1Name.AutoSize = true;
+            enemy1Name.Dock = DockStyle.Fill;
+            enemy1Name.Location = new Point(3, 0);
+            enemy1Name.Name = "enemy1Name";
+            enemy1Name.Size = new Size(52, 22);
+            enemy1Name.TabIndex = 0;
+            enemy1Name.Text = "Name";
+            enemy1Name.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1Level
+            // 
+            enemy1Level.AutoSize = true;
+            enemy1Level.Dock = DockStyle.Fill;
+            enemy1Level.Location = new Point(3, 22);
+            enemy1Level.Name = "enemy1Level";
+            enemy1Level.Size = new Size(52, 22);
+            enemy1Level.TabIndex = 1;
+            enemy1Level.Text = "Level";
+            enemy1Level.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1HP
+            // 
+            enemy1HP.AutoSize = true;
+            enemy1HP.Dock = DockStyle.Fill;
+            enemy1HP.Location = new Point(3, 44);
+            enemy1HP.Name = "enemy1HP";
+            enemy1HP.Size = new Size(52, 22);
+            enemy1HP.TabIndex = 2;
+            enemy1HP.Text = "HP";
+            enemy1HP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1MaxHP
+            // 
+            enemy1MaxHP.AutoSize = true;
+            enemy1MaxHP.Dock = DockStyle.Fill;
+            enemy1MaxHP.Location = new Point(3, 66);
+            enemy1MaxHP.Name = "enemy1MaxHP";
+            enemy1MaxHP.Size = new Size(52, 22);
+            enemy1MaxHP.TabIndex = 3;
+            enemy1MaxHP.Text = "Max HP";
+            enemy1MaxHP.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1Attack
+            // 
+            enemy1Attack.AutoSize = true;
+            enemy1Attack.Dock = DockStyle.Fill;
+            enemy1Attack.Location = new Point(3, 88);
+            enemy1Attack.Name = "enemy1Attack";
+            enemy1Attack.Size = new Size(52, 22);
+            enemy1Attack.TabIndex = 4;
+            enemy1Attack.Text = "Attack";
+            enemy1Attack.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1Defense
+            // 
+            enemy1Defense.AutoSize = true;
+            enemy1Defense.Dock = DockStyle.Fill;
+            enemy1Defense.Location = new Point(3, 110);
+            enemy1Defense.Name = "enemy1Defense";
+            enemy1Defense.Size = new Size(52, 26);
+            enemy1Defense.TabIndex = 5;
+            enemy1Defense.Text = "Defense";
+            enemy1Defense.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1HPDynamic
+            // 
+            enemy1HPDynamic.Dock = DockStyle.Fill;
+            enemy1HPDynamic.Location = new Point(61, 44);
+            enemy1HPDynamic.Margin = new Padding(3, 0, 3, 0);
+            enemy1HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
+            enemy1HPDynamic.Name = "enemy1HPDynamic";
+            enemy1HPDynamic.Size = new Size(65, 23);
+            enemy1HPDynamic.TabIndex = 6;
+            // 
+            // enemy1NameDynamic
+            // 
+            enemy1NameDynamic.AutoEllipsis = true;
+            enemy1NameDynamic.AutoSize = true;
+            enemy1NameDynamic.Dock = DockStyle.Fill;
+            enemy1NameDynamic.Location = new Point(61, 0);
+            enemy1NameDynamic.Margin = new Padding(3, 0, 0, 0);
+            enemy1NameDynamic.Name = "enemy1NameDynamic";
+            enemy1NameDynamic.Size = new Size(68, 22);
+            enemy1NameDynamic.TabIndex = 7;
+            enemy1NameDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1LevelDynamic
+            // 
+            enemy1LevelDynamic.AutoSize = true;
+            enemy1LevelDynamic.Dock = DockStyle.Fill;
+            enemy1LevelDynamic.Location = new Point(61, 22);
+            enemy1LevelDynamic.Name = "enemy1LevelDynamic";
+            enemy1LevelDynamic.Size = new Size(65, 22);
+            enemy1LevelDynamic.TabIndex = 8;
+            enemy1LevelDynamic.Text = "1";
+            enemy1LevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1MaxHPDynamic
+            // 
+            enemy1MaxHPDynamic.AutoSize = true;
+            enemy1MaxHPDynamic.Dock = DockStyle.Fill;
+            enemy1MaxHPDynamic.Location = new Point(61, 66);
+            enemy1MaxHPDynamic.Name = "enemy1MaxHPDynamic";
+            enemy1MaxHPDynamic.Size = new Size(65, 22);
+            enemy1MaxHPDynamic.TabIndex = 9;
+            enemy1MaxHPDynamic.Text = "0";
+            enemy1MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1AttackDynamic
+            // 
+            enemy1AttackDynamic.AutoSize = true;
+            enemy1AttackDynamic.Dock = DockStyle.Fill;
+            enemy1AttackDynamic.Location = new Point(61, 88);
+            enemy1AttackDynamic.Name = "enemy1AttackDynamic";
+            enemy1AttackDynamic.Size = new Size(65, 22);
+            enemy1AttackDynamic.TabIndex = 10;
+            enemy1AttackDynamic.Text = "0";
+            enemy1AttackDynamic.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // enemy1DefenseDynamic
+            // 
+            enemy1DefenseDynamic.AutoSize = true;
+            enemy1DefenseDynamic.Dock = DockStyle.Fill;
+            enemy1DefenseDynamic.Location = new Point(61, 110);
+            enemy1DefenseDynamic.Name = "enemy1DefenseDynamic";
+            enemy1DefenseDynamic.Size = new Size(65, 26);
+            enemy1DefenseDynamic.TabIndex = 11;
+            enemy1DefenseDynamic.Text = "0";
+            enemy1DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tabUnique
             // 
             tabUnique.Location = new Point(4, 24);
             tabUnique.Name = "tabUnique";
             tabUnique.Padding = new Padding(3);
-            tabUnique.Size = new Size(410, 144);
+            tabUnique.Size = new Size(416, 150);
             tabUnique.TabIndex = 1;
             tabUnique.Text = "Unique";
             tabUnique.UseVisualStyleBackColor = true;
@@ -2539,7 +3077,7 @@
             // openFileDialog
             // 
             openFileDialog.DefaultExt = "json";
-            openFileDialog.Filter = "JavaScript Object Notation|*.json|All files|*.*";
+            openFileDialog.Filter = "XenoStars Save File|*.json|All files|*.*";
             openFileDialog.FileOk += OpenFileDialog_FileOk;
             // 
             // tableLayoutPanel4
@@ -2566,7 +3104,44 @@
             // 
             // openEnemyDialog
             // 
+            openEnemyDialog.DefaultExt = "json";
+            openEnemyDialog.Filter = "XenoStars Save File|*.json|All files|*.*";
             openEnemyDialog.FileOk += OpenEnemyDialog_FileOk;
+            // 
+            // tableLayoutPanel38
+            // 
+            tableLayoutPanel38.ColumnCount = 2;
+            tableLayoutPanel38.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel38.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel38.Controls.Add(label12, 0, 0);
+            tableLayoutPanel38.Location = new Point(0, 0);
+            tableLayoutPanel38.Name = "tableLayoutPanel38";
+            tableLayoutPanel38.RowCount = 1;
+            tableLayoutPanel38.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel38.Size = new Size(200, 100);
+            tableLayoutPanel38.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Dock = DockStyle.Fill;
+            label12.Location = new Point(3, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(94, 100);
+            label12.TabIndex = 0;
+            label12.Text = "Name";
+            label12.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Dock = DockStyle.Fill;
+            label13.Location = new Point(3, 15);
+            label13.Name = "label13";
+            label13.Size = new Size(94, 85);
+            label13.TabIndex = 1;
+            label13.Text = "Level";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -2575,6 +3150,7 @@
             ClientSize = new Size(884, 561);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(900, 600);
             Name = "Form1";
             Text = "XenoStars Battle Calculator";
             tableLayoutPanel1.ResumeLayout(false);
@@ -2627,6 +3203,16 @@
             tableLayoutPanel28.ResumeLayout(false);
             tabEnemies.ResumeLayout(false);
             tabBasicEnemies.ResumeLayout(false);
+            tableLayoutPanel29.ResumeLayout(false);
+            tableLayoutPanel39.ResumeLayout(false);
+            tableLayoutPanel39.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy3HPDynamic).EndInit();
+            tableLayoutPanel37.ResumeLayout(false);
+            tableLayoutPanel37.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy2HPDynamic).EndInit();
+            tableLayoutPanel36.ResumeLayout(false);
+            tableLayoutPanel36.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)enemy1HPDynamic).EndInit();
             tabMultipurpose.ResumeLayout(false);
             tabGeneral.ResumeLayout(false);
             tableLayoutPanel26.ResumeLayout(false);
@@ -2659,6 +3245,8 @@
             monadoArts.ResumeLayout(false);
             tableLayoutPanel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)monadoArtNumber).EndInit();
+            tableLayoutPanel38.ResumeLayout(false);
+            tableLayoutPanel38.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2846,5 +3434,47 @@
         private ProgressBar partyMeter1;
         private ProgressBar partyMeter3;
         private ProgressBar partyMeter2;
+        private TableLayoutPanel tableLayoutPanel36;
+        private Label enemy1Name;
+        private Label enemy1Level;
+        private Label enemy1HP;
+        private Label enemy1MaxHP;
+        private Label enemy1Attack;
+        private Label enemy1Defense;
+        private NumericUpDown enemy1HPDynamic;
+        private Label enemy1NameDynamic;
+        private Label enemy1LevelDynamic;
+        private Label enemy1MaxHPDynamic;
+        private Label enemy1AttackDynamic;
+        private Label enemy1DefenseDynamic;
+        private TableLayoutPanel tableLayoutPanel39;
+        private Label enemy3Name;
+        private Label enemy3Level;
+        private Label enemy3HP;
+        private Label enemy3MaxHP;
+        private Label enemy3Attack;
+        private Label enemy3Defense;
+        private NumericUpDown enemy3HPDynamic;
+        private Label enemy3NameDynamic;
+        private Label enemy3LevelDynamic;
+        private Label enemy3MaxHPDynamic;
+        private Label enemy3AttackDynamic;
+        private Label enemy3DefenseDynamic;
+        private TableLayoutPanel tableLayoutPanel37;
+        private Label enemy2Name;
+        private Label enemy2Level;
+        private Label enemy2HP;
+        private Label enemy2MaxHP;
+        private Label enemy2Attack;
+        private Label enemy2Defense;
+        private NumericUpDown enemy2HPDynamic;
+        private Label enemy2NameDynamic;
+        private Label enemy2LevelDynamic;
+        private Label enemy2MaxHPDynamic;
+        private Label enemy2AttackDynamic;
+        private Label enemy2DefenseDynamic;
+        private TableLayoutPanel tableLayoutPanel38;
+        private Label label12;
+        private Label label13;
     }
 }
