@@ -387,7 +387,6 @@
             textHP.Size = new Size(88, 23);
             textHP.TabIndex = 10;
             textHP.Value = new decimal(new int[] { 50, 0, 0, 0 });
-            textHP.ValueChanged += textHP_ValueChanged;
             // 
             // setHP
             // 

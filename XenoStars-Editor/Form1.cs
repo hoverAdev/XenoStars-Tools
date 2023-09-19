@@ -379,11 +379,6 @@ namespace XenoStars_Editor
         {
             mainSave.Characters[charactersList.SelectedIndex].Defense = Convert.ToUInt16(textDefense.Value);
         }
-
-        private void textHP_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
     public class SaveFile

@@ -633,6 +633,25 @@ namespace XenoStars_Battle
             {
                 turnsEnemies.Text = enemies;
             }
+
+
+            if (turnCounter.Value < 99)
+            {
+                turnCounter.Value++;
+            }
+
+            if (player1APDynamic.Value < player1APDynamic.Maximum)
+            {
+                player1APDynamic.Value++;
+            }
+            if (player2APDynamic.Value < player2APDynamic.Maximum)
+            {
+                player2APDynamic.Value++;
+            }
+            if (player3APDynamic.Value < player3APDynamic.Maximum)
+            {
+                player3APDynamic.Value++;
+            }
         }
 
         private void UnloadEnemy_Click(object sender, EventArgs e)
@@ -662,6 +681,137 @@ namespace XenoStars_Battle
             enemy3MaxHPDynamic.Text = "0";
             enemy3AttackDynamic.Text = "0";
             enemy3DefenseDynamic.Text = "0";
+        }
+
+        private short ArtClick(int index, int artIndex)
+        {
+            if (index > 0 && index < mainSave.Characters.Count)
+            {
+                if (artIndex < mainSave.Characters[index].Arts.Count)
+                {
+                    if (numericParty.Value < numericParty.Maximum)
+                    {
+                        numericParty.Value++;
+                    }
+                    return mainSave.Characters[index].Arts[artIndex].Cost;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private void Player1Art1_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies1.SelectedIndex, 0);
+            if (player1APDynamic.Value >= artCost)
+            {
+                player1APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player1Art2_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies1.SelectedIndex, 1);
+            if (player1APDynamic.Value >= artCost)
+            {
+                player1APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player1Art3_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies1.SelectedIndex, 2);
+            if (player1APDynamic.Value >= artCost)
+            {
+                player1APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player1Art4_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies1.SelectedIndex, 3);
+            if (player1APDynamic.Value >= artCost)
+            {
+                player1APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player2Art1_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies2.SelectedIndex, 0);
+            if (player2APDynamic.Value >= artCost)
+            {
+                player2APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player2Art2_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies2.SelectedIndex, 1);
+            if (player2APDynamic.Value >= artCost)
+            {
+                player2APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player2Art3_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies2.SelectedIndex, 2);
+            if (player2APDynamic.Value >= artCost)
+            {
+                player2APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player2Art4_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies2.SelectedIndex, 3);
+            if (player2APDynamic.Value >= artCost)
+            {
+                player2APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player3Art1_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies3.SelectedIndex, 0);
+            if (player3APDynamic.Value >= artCost)
+            {
+                player3APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player3Art2_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies3.SelectedIndex, 1);
+            if (player3APDynamic.Value >= artCost)
+            {
+                player3APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player3Art3_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies3.SelectedIndex, 2);
+            if (player3APDynamic.Value >= artCost)
+            {
+                player3APDynamic.Value -= artCost;
+            }
+        }
+
+        private void Player3Art4_Click(object sender, EventArgs e)
+        {
+            var artCost = ArtClick(allies3.SelectedIndex, 3);
+            if (player3APDynamic.Value >= artCost)
+            {
+                player3APDynamic.Value -= artCost;
+            }
         }
     }
 
