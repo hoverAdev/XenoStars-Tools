@@ -173,7 +173,7 @@ namespace XenoStars_Editor
             var index = charactersList.SelectedIndex;
             if (index > 0)
             {
-                mainSave.Characters[index].BaseHP = Convert.ToByte(textHP.Value);
+                mainSave.Characters[index].BaseHP = Convert.ToUInt16(textHP.Value);
             }
         }
 
@@ -217,6 +217,7 @@ namespace XenoStars_Editor
                 textAP.Value = currentChar.BaseAP;
                 textDamage.Value = currentChar.BaseDMG;
                 checkLinear.Checked = currentChar.WeaponLinearScaling;
+                textDefense.Value = currentChar.Defense;
 
                 if (currentChar.EtherType)
                 {
@@ -378,6 +379,11 @@ namespace XenoStars_Editor
         {
             mainSave.Characters[charactersList.SelectedIndex].Defense = Convert.ToUInt16(textDefense.Value);
         }
+
+        private void textHP_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class SaveFile
@@ -425,7 +431,7 @@ namespace XenoStars_Editor
         public String Name { get; set; }
         public String Player { get; set; }
         public Boolean EtherType { get; set; }
-        public Byte BaseHP { get; set; }
+        public UInt16 BaseHP { get; set; }
         public Byte BaseAP { get; set; }
         public UInt16 BaseDMG { get; set; }
         public UInt16 Defense { get; set; }

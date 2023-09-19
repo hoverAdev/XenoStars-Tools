@@ -382,11 +382,12 @@
             // 
             textHP.Dock = DockStyle.Fill;
             textHP.Location = new Point(93, 90);
-            textHP.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            textHP.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textHP.Name = "textHP";
             textHP.Size = new Size(88, 23);
             textHP.TabIndex = 10;
             textHP.Value = new decimal(new int[] { 50, 0, 0, 0 });
+            textHP.ValueChanged += textHP_ValueChanged;
             // 
             // setHP
             // 
@@ -445,7 +446,7 @@
             // 
             textDamage.Dock = DockStyle.Fill;
             textDamage.Location = new Point(93, 148);
-            textDamage.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            textDamage.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textDamage.Name = "textDamage";
             textDamage.Size = new Size(88, 23);
             textDamage.TabIndex = 16;
