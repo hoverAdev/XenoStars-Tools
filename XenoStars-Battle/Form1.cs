@@ -860,7 +860,7 @@ namespace XenoStars_Battle
         public String Name { get; set; }
         public String Player { get; set; } // Player is also used for enemy levels
         public Boolean EtherType { get; set; }
-        public UInt16 BaseHP { get; set; }
+        public UInt32 BaseHP { get; set; }
         public Byte BaseAP { get; set; }
         public UInt16 BaseDMG { get; set; }
         public UInt16 Defense { get; set; }

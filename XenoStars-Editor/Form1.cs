@@ -191,7 +191,7 @@ namespace XenoStars_Editor
             var index = charactersList.SelectedIndex;
             if (index > 0)
             {
-                mainSave.Characters[index].BaseDMG = Convert.ToByte(textDamage.Value);
+                mainSave.Characters[index].BaseDMG = Convert.ToUInt16(textDamage.Value);
             }
         }
 
@@ -426,7 +426,7 @@ namespace XenoStars_Editor
         public String Name { get; set; }
         public String Player { get; set; }
         public Boolean EtherType { get; set; }
-        public UInt16 BaseHP { get; set; }
+        public UInt32 BaseHP { get; set; }
         public Byte BaseAP { get; set; }
         public UInt16 BaseDMG { get; set; }
         public UInt16 Defense { get; set; }

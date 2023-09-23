@@ -191,7 +191,7 @@
             tableLayoutPanel6.RowCount = 1;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel6.Size = new Size(594, 444);
-            tableLayoutPanel6.TabIndex = 2;
+            tableLayoutPanel6.TabIndex = 7;
             // 
             // groupBox1
             // 
@@ -200,7 +200,7 @@
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(291, 438);
-            groupBox1.TabIndex = 0;
+            groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Selected Character";
             // 
@@ -217,7 +217,7 @@
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 238F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel8.Size = new Size(285, 416);
-            tableLayoutPanel8.TabIndex = 1;
+            tableLayoutPanel8.TabIndex = 9;
             // 
             // tableLayoutPanel7
             // 
@@ -262,7 +262,7 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel7.Size = new Size(279, 232);
-            tableLayoutPanel7.TabIndex = 0;
+            tableLayoutPanel7.TabIndex = 10;
             // 
             // textDefense
             // 
@@ -271,7 +271,7 @@
             textDefense.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textDefense.Name = "textDefense";
             textDefense.Size = new Size(88, 23);
-            textDefense.TabIndex = 22;
+            textDefense.TabIndex = 33;
             // 
             // label1
             // 
@@ -280,7 +280,7 @@
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(84, 29);
-            label1.TabIndex = 0;
+            label1.TabIndex = 11;
             label1.Text = "Name";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -290,7 +290,7 @@
             textName.Location = new Point(93, 3);
             textName.Name = "textName";
             textName.Size = new Size(88, 23);
-            textName.TabIndex = 1;
+            textName.TabIndex = 12;
             // 
             // label2
             // 
@@ -299,7 +299,7 @@
             label2.Location = new Point(3, 29);
             label2.Name = "label2";
             label2.Size = new Size(84, 29);
-            label2.TabIndex = 2;
+            label2.TabIndex = 14;
             label2.Text = "Player";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -310,7 +310,7 @@
             label3.Location = new Point(3, 58);
             label3.Name = "label3";
             label3.Size = new Size(84, 29);
-            label3.TabIndex = 3;
+            label3.TabIndex = 17;
             label3.Text = "Ether Type";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -322,7 +322,7 @@
             checkType.Location = new Point(93, 61);
             checkType.Name = "checkType";
             checkType.Size = new Size(88, 23);
-            checkType.TabIndex = 4;
+            checkType.TabIndex = 18;
             checkType.TextAlign = ContentAlignment.MiddleCenter;
             checkType.UseVisualStyleBackColor = true;
             // 
@@ -332,7 +332,7 @@
             textPlayer.Location = new Point(93, 32);
             textPlayer.Name = "textPlayer";
             textPlayer.Size = new Size(88, 23);
-            textPlayer.TabIndex = 5;
+            textPlayer.TabIndex = 15;
             // 
             // setName
             // 
@@ -340,7 +340,7 @@
             setName.Location = new Point(187, 3);
             setName.Name = "setName";
             setName.Size = new Size(89, 23);
-            setName.TabIndex = 6;
+            setName.TabIndex = 13;
             setName.Text = "Set Name";
             setName.UseVisualStyleBackColor = true;
             setName.Click += SetName_Click;
@@ -351,7 +351,7 @@
             setPlayer.Location = new Point(187, 32);
             setPlayer.Name = "setPlayer";
             setPlayer.Size = new Size(89, 23);
-            setPlayer.TabIndex = 7;
+            setPlayer.TabIndex = 16;
             setPlayer.Text = "Set Player";
             setPlayer.UseVisualStyleBackColor = true;
             setPlayer.Click += SetPlayer_Click;
@@ -362,7 +362,7 @@
             setType.Location = new Point(187, 61);
             setType.Name = "setType";
             setType.Size = new Size(89, 23);
-            setType.TabIndex = 8;
+            setType.TabIndex = 19;
             setType.Text = "Set Type";
             setType.UseVisualStyleBackColor = true;
             setType.Click += SetType_Click;
@@ -374,7 +374,7 @@
             label4.Location = new Point(3, 87);
             label4.Name = "label4";
             label4.Size = new Size(84, 29);
-            label4.TabIndex = 9;
+            label4.TabIndex = 20;
             label4.Text = "Base HP";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -385,7 +385,7 @@
             textHP.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textHP.Name = "textHP";
             textHP.Size = new Size(88, 23);
-            textHP.TabIndex = 10;
+            textHP.TabIndex = 21;
             textHP.Value = new decimal(new int[] { 50, 0, 0, 0 });
             // 
             // setHP
@@ -394,7 +394,7 @@
             setHP.Location = new Point(187, 90);
             setHP.Name = "setHP";
             setHP.Size = new Size(89, 23);
-            setHP.TabIndex = 11;
+            setHP.TabIndex = 22;
             setHP.Text = "Set Base HP";
             setHP.UseVisualStyleBackColor = true;
             setHP.Click += SetHP_Click;
@@ -406,7 +406,7 @@
             label5.Location = new Point(3, 116);
             label5.Name = "label5";
             label5.Size = new Size(84, 29);
-            label5.TabIndex = 12;
+            label5.TabIndex = 23;
             label5.Text = "Base AP";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -417,7 +417,7 @@
             textAP.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             textAP.Name = "textAP";
             textAP.Size = new Size(88, 23);
-            textAP.TabIndex = 13;
+            textAP.TabIndex = 24;
             // 
             // setAP
             // 
@@ -425,7 +425,7 @@
             setAP.Location = new Point(187, 119);
             setAP.Name = "setAP";
             setAP.Size = new Size(89, 23);
-            setAP.TabIndex = 14;
+            setAP.TabIndex = 25;
             setAP.Text = "Set Base AP";
             setAP.UseVisualStyleBackColor = true;
             setAP.Click += SetAP_Click;
@@ -437,7 +437,7 @@
             label6.Location = new Point(3, 145);
             label6.Name = "label6";
             label6.Size = new Size(84, 29);
-            label6.TabIndex = 15;
+            label6.TabIndex = 26;
             label6.Text = "Base Attack";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -448,7 +448,7 @@
             textDamage.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textDamage.Name = "textDamage";
             textDamage.Size = new Size(88, 23);
-            textDamage.TabIndex = 16;
+            textDamage.TabIndex = 27;
             // 
             // setDamage
             // 
@@ -456,7 +456,7 @@
             setDamage.Location = new Point(187, 148);
             setDamage.Name = "setDamage";
             setDamage.Size = new Size(89, 23);
-            setDamage.TabIndex = 17;
+            setDamage.TabIndex = 28;
             setDamage.Text = "Set Attack";
             setDamage.UseVisualStyleBackColor = true;
             setDamage.Click += SetDamage_Click;
@@ -469,7 +469,7 @@
             checkLinear.Location = new Point(93, 177);
             checkLinear.Name = "checkLinear";
             checkLinear.Size = new Size(88, 23);
-            checkLinear.TabIndex = 18;
+            checkLinear.TabIndex = 30;
             checkLinear.TextAlign = ContentAlignment.MiddleCenter;
             checkLinear.UseVisualStyleBackColor = true;
             // 
@@ -480,7 +480,7 @@
             label7.Location = new Point(3, 174);
             label7.Name = "label7";
             label7.Size = new Size(84, 29);
-            label7.TabIndex = 19;
+            label7.TabIndex = 29;
             label7.Text = "Linear Scaling";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -490,7 +490,7 @@
             setLinear.Location = new Point(187, 177);
             setLinear.Name = "setLinear";
             setLinear.Size = new Size(89, 23);
-            setLinear.TabIndex = 20;
+            setLinear.TabIndex = 31;
             setLinear.Text = "Set Linear";
             setLinear.UseVisualStyleBackColor = true;
             setLinear.Click += SetLinear_Click;
@@ -502,7 +502,7 @@
             label13.Location = new Point(3, 203);
             label13.Name = "label13";
             label13.Size = new Size(84, 29);
-            label13.TabIndex = 21;
+            label13.TabIndex = 32;
             label13.Text = "Defense";
             label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -512,7 +512,7 @@
             setDefense.Location = new Point(187, 206);
             setDefense.Name = "setDefense";
             setDefense.Size = new Size(89, 23);
-            setDefense.TabIndex = 23;
+            setDefense.TabIndex = 34;
             setDefense.Text = "Set Defense";
             setDefense.UseVisualStyleBackColor = true;
             setDefense.Click += SetDefense_Click;
@@ -530,7 +530,7 @@
             tableLayoutPanel9.RowCount = 1;
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel9.Size = new Size(279, 172);
-            tableLayoutPanel9.TabIndex = 1;
+            tableLayoutPanel9.TabIndex = 35;
             // 
             // groupBox2
             // 
@@ -539,7 +539,7 @@
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(133, 166);
-            groupBox2.TabIndex = 0;
+            groupBox2.TabIndex = 36;
             groupBox2.TabStop = false;
             groupBox2.Text = "Equipment";
             // 
@@ -577,7 +577,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel2.Size = new Size(127, 116);
-            tableLayoutPanel2.TabIndex = 0;
+            tableLayoutPanel2.TabIndex = 37;
             // 
             // textWeapon
             // 
@@ -586,7 +586,7 @@
             textWeapon.Name = "textWeapon";
             textWeapon.PlaceholderText = "Weapon";
             textWeapon.Size = new Size(121, 23);
-            textWeapon.TabIndex = 0;
+            textWeapon.TabIndex = 38;
             // 
             // textHead
             // 
@@ -595,7 +595,7 @@
             textHead.Name = "textHead";
             textHead.PlaceholderText = "Head Gear";
             textHead.Size = new Size(121, 23);
-            textHead.TabIndex = 1;
+            textHead.TabIndex = 39;
             // 
             // textTorso
             // 
@@ -604,7 +604,7 @@
             textTorso.Name = "textTorso";
             textTorso.PlaceholderText = "Torso Gear";
             textTorso.Size = new Size(121, 23);
-            textTorso.TabIndex = 2;
+            textTorso.TabIndex = 40;
             // 
             // textLegs
             // 
@@ -613,7 +613,7 @@
             textLegs.Name = "textLegs";
             textLegs.PlaceholderText = "Legs Gear";
             textLegs.Size = new Size(121, 23);
-            textLegs.TabIndex = 3;
+            textLegs.TabIndex = 41;
             // 
             // setEquip
             // 
@@ -622,7 +622,7 @@
             setEquip.Margin = new Padding(0);
             setEquip.Name = "setEquip";
             setEquip.Size = new Size(127, 28);
-            setEquip.TabIndex = 1;
+            setEquip.TabIndex = 42;
             setEquip.Text = "Set Equipment";
             setEquip.UseVisualStyleBackColor = true;
             setEquip.Click += SetEquip_Click;
@@ -634,7 +634,7 @@
             groupBox3.Location = new Point(142, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(134, 166);
-            groupBox3.TabIndex = 1;
+            groupBox3.TabIndex = 43;
             groupBox3.TabStop = false;
             groupBox3.Text = "Arts";
             // 
@@ -677,7 +677,7 @@
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel12.Size = new Size(128, 116);
-            tableLayoutPanel12.TabIndex = 0;
+            tableLayoutPanel12.TabIndex = 44;
             // 
             // art1
             // 
@@ -686,7 +686,7 @@
             art1.Name = "art1";
             art1.PlaceholderText = "Art 1";
             art1.Size = new Size(77, 23);
-            art1.TabIndex = 0;
+            art1.TabIndex = 45;
             // 
             // art2
             // 
@@ -695,7 +695,7 @@
             art2.Name = "art2";
             art2.PlaceholderText = "Art 2";
             art2.Size = new Size(77, 23);
-            art2.TabIndex = 1;
+            art2.TabIndex = 47;
             // 
             // art3
             // 
@@ -704,7 +704,7 @@
             art3.Name = "art3";
             art3.PlaceholderText = "Art 3";
             art3.Size = new Size(77, 23);
-            art3.TabIndex = 2;
+            art3.TabIndex = 49;
             // 
             // art4
             // 
@@ -713,7 +713,7 @@
             art4.Name = "art4";
             art4.PlaceholderText = "Art 4";
             art4.Size = new Size(77, 23);
-            art4.TabIndex = 3;
+            art4.TabIndex = 51;
             // 
             // art1Cost
             // 
@@ -722,7 +722,7 @@
             art1Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art1Cost.Name = "art1Cost";
             art1Cost.Size = new Size(39, 23);
-            art1Cost.TabIndex = 4;
+            art1Cost.TabIndex = 46;
             // 
             // art2Cost
             // 
@@ -731,7 +731,7 @@
             art2Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art2Cost.Name = "art2Cost";
             art2Cost.Size = new Size(39, 23);
-            art2Cost.TabIndex = 5;
+            art2Cost.TabIndex = 48;
             // 
             // art3Cost
             // 
@@ -740,7 +740,7 @@
             art3Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art3Cost.Name = "art3Cost";
             art3Cost.Size = new Size(39, 23);
-            art3Cost.TabIndex = 6;
+            art3Cost.TabIndex = 50;
             // 
             // art4Cost
             // 
@@ -749,7 +749,7 @@
             art4Cost.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             art4Cost.Name = "art4Cost";
             art4Cost.Size = new Size(39, 23);
-            art4Cost.TabIndex = 7;
+            art4Cost.TabIndex = 52;
             // 
             // setArts
             // 
@@ -758,7 +758,7 @@
             setArts.Margin = new Padding(0);
             setArts.Name = "setArts";
             setArts.Size = new Size(128, 28);
-            setArts.TabIndex = 1;
+            setArts.TabIndex = 53;
             setArts.Text = "Set Arts";
             setArts.UseVisualStyleBackColor = true;
             setArts.Click += SetArts_Click;
@@ -778,7 +778,7 @@
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
             tableLayoutPanel13.Size = new Size(291, 438);
-            tableLayoutPanel13.TabIndex = 1;
+            tableLayoutPanel13.TabIndex = 54;
             // 
             // tableLayoutPanel17
             // 
@@ -811,7 +811,7 @@
             tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel17.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel17.Size = new Size(285, 145);
-            tableLayoutPanel17.TabIndex = 0;
+            tableLayoutPanel17.TabIndex = 55;
             // 
             // label8
             // 
@@ -820,7 +820,7 @@
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
             label8.Size = new Size(64, 29);
-            label8.TabIndex = 0;
+            label8.TabIndex = 56;
             label8.Text = "Level";
             label8.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -831,7 +831,7 @@
             label9.Location = new Point(3, 29);
             label9.Name = "label9";
             label9.Size = new Size(64, 29);
-            label9.TabIndex = 1;
+            label9.TabIndex = 59;
             label9.Text = "Experience";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -842,7 +842,7 @@
             label10.Location = new Point(3, 58);
             label10.Name = "label10";
             label10.Size = new Size(64, 29);
-            label10.TabIndex = 2;
+            label10.TabIndex = 64;
             label10.Text = "Chapter";
             label10.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -853,7 +853,7 @@
             label11.Location = new Point(3, 87);
             label11.Name = "label11";
             label11.Size = new Size(64, 29);
-            label11.TabIndex = 4;
+            label11.TabIndex = 67;
             label11.Text = "Location";
             label11.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -864,7 +864,7 @@
             textLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             textLevel.Name = "textLevel";
             textLevel.Size = new Size(101, 23);
-            textLevel.TabIndex = 5;
+            textLevel.TabIndex = 57;
             textLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // setLevel
@@ -873,7 +873,7 @@
             setLevel.Location = new Point(180, 3);
             setLevel.Name = "setLevel";
             setLevel.Size = new Size(102, 23);
-            setLevel.TabIndex = 6;
+            setLevel.TabIndex = 58;
             setLevel.Text = "Set Level";
             setLevel.UseVisualStyleBackColor = true;
             setLevel.Click += SetLevel_Click;
@@ -892,7 +892,7 @@
             tableLayoutPanel18.RowCount = 1;
             tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel18.Size = new Size(107, 29);
-            tableLayoutPanel18.TabIndex = 7;
+            tableLayoutPanel18.TabIndex = 60;
             // 
             // textExp
             // 
@@ -901,7 +901,7 @@
             textExp.Location = new Point(3, 0);
             textExp.Name = "textExp";
             textExp.Size = new Size(44, 29);
-            textExp.TabIndex = 0;
+            textExp.TabIndex = 61;
             textExp.Text = "6";
             textExp.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -912,7 +912,7 @@
             textExperience.Maximum = new decimal(new int[] { 102010, 0, 0, 0 });
             textExperience.Name = "textExperience";
             textExperience.Size = new Size(51, 23);
-            textExperience.TabIndex = 1;
+            textExperience.TabIndex = 62;
             // 
             // setExperience
             // 
@@ -921,7 +921,7 @@
             setExperience.Location = new Point(180, 32);
             setExperience.Name = "setExperience";
             setExperience.Size = new Size(102, 23);
-            setExperience.TabIndex = 8;
+            setExperience.TabIndex = 63;
             setExperience.Text = "Add Experience";
             setExperience.UseVisualStyleBackColor = true;
             setExperience.Click += SetExperience_Click;
@@ -931,7 +931,7 @@
             textChapter.Location = new Point(73, 61);
             textChapter.Name = "textChapter";
             textChapter.Size = new Size(101, 23);
-            textChapter.TabIndex = 9;
+            textChapter.TabIndex = 65;
             // 
             // label12
             // 
@@ -940,7 +940,7 @@
             label12.Location = new Point(3, 116);
             label12.Name = "label12";
             label12.Size = new Size(64, 29);
-            label12.TabIndex = 10;
+            label12.TabIndex = 70;
             label12.Text = "Money";
             label12.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -950,7 +950,7 @@
             textLocation.Location = new Point(73, 90);
             textLocation.Name = "textLocation";
             textLocation.Size = new Size(101, 23);
-            textLocation.TabIndex = 11;
+            textLocation.TabIndex = 68;
             // 
             // textMoney
             // 
@@ -958,7 +958,7 @@
             textMoney.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             textMoney.Name = "textMoney";
             textMoney.Size = new Size(101, 23);
-            textMoney.TabIndex = 12;
+            textMoney.TabIndex = 71;
             // 
             // setChapter
             // 
@@ -966,7 +966,7 @@
             setChapter.Location = new Point(180, 61);
             setChapter.Name = "setChapter";
             setChapter.Size = new Size(102, 23);
-            setChapter.TabIndex = 13;
+            setChapter.TabIndex = 66;
             setChapter.Text = "Set Chapter";
             setChapter.UseVisualStyleBackColor = true;
             setChapter.Click += SetChapter_Click;
@@ -977,7 +977,7 @@
             setLocation.Location = new Point(180, 90);
             setLocation.Name = "setLocation";
             setLocation.Size = new Size(102, 23);
-            setLocation.TabIndex = 14;
+            setLocation.TabIndex = 69;
             setLocation.Text = "Set Location";
             setLocation.UseVisualStyleBackColor = true;
             setLocation.Click += SetLocation_Click;
@@ -988,7 +988,7 @@
             SetMoney.Location = new Point(180, 119);
             SetMoney.Name = "SetMoney";
             SetMoney.Size = new Size(102, 23);
-            SetMoney.TabIndex = 15;
+            SetMoney.TabIndex = 72;
             SetMoney.Text = "Set Money";
             SetMoney.UseVisualStyleBackColor = true;
             SetMoney.Click += SetMoney_Click;
@@ -1009,7 +1009,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Size = new Size(285, 64);
-            tableLayoutPanel3.TabIndex = 1;
+            tableLayoutPanel3.TabIndex = 80;
             // 
             // openFile
             // 
@@ -1017,7 +1017,7 @@
             openFile.Location = new Point(3, 3);
             openFile.Name = "openFile";
             openFile.Size = new Size(136, 26);
-            openFile.TabIndex = 0;
+            openFile.TabIndex = 81;
             openFile.Text = "Open...";
             openFile.UseVisualStyleBackColor = true;
             openFile.Click += OpenFile_Click;
@@ -1029,7 +1029,7 @@
             reloadFile.Location = new Point(145, 3);
             reloadFile.Name = "reloadFile";
             reloadFile.Size = new Size(137, 26);
-            reloadFile.TabIndex = 1;
+            reloadFile.TabIndex = 82;
             reloadFile.Text = "Reload";
             reloadFile.UseVisualStyleBackColor = true;
             reloadFile.Click += ReloadFile_Click;
@@ -1040,7 +1040,7 @@
             saveFileAs.Location = new Point(3, 35);
             saveFileAs.Name = "saveFileAs";
             saveFileAs.Size = new Size(136, 26);
-            saveFileAs.TabIndex = 2;
+            saveFileAs.TabIndex = 83;
             saveFileAs.Text = "Save As...";
             saveFileAs.UseVisualStyleBackColor = true;
             saveFileAs.Click += SaveFileAs_Click;
@@ -1052,7 +1052,7 @@
             saveFile.Location = new Point(145, 35);
             saveFile.Name = "saveFile";
             saveFile.Size = new Size(137, 26);
-            saveFile.TabIndex = 3;
+            saveFile.TabIndex = 84;
             saveFile.Text = "Save";
             saveFile.UseVisualStyleBackColor = true;
             saveFile.Click += SaveFile_Click;
@@ -1064,7 +1064,7 @@
             groupBox4.Location = new Point(3, 154);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(285, 211);
-            groupBox4.TabIndex = 2;
+            groupBox4.TabIndex = 73;
             groupBox4.TabStop = false;
             groupBox4.Text = "Inventory";
             // 
@@ -1081,7 +1081,7 @@
             tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel15.Size = new Size(279, 189);
-            tableLayoutPanel15.TabIndex = 1;
+            tableLayoutPanel15.TabIndex = 74;
             // 
             // tableLayoutPanel16
             // 
@@ -1099,7 +1099,7 @@
             tableLayoutPanel16.RowCount = 1;
             tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel16.Size = new Size(279, 29);
-            tableLayoutPanel16.TabIndex = 0;
+            tableLayoutPanel16.TabIndex = 76;
             // 
             // inventoryAdd
             // 
@@ -1107,7 +1107,7 @@
             inventoryAdd.Location = new Point(96, 3);
             inventoryAdd.Name = "inventoryAdd";
             inventoryAdd.Size = new Size(87, 23);
-            inventoryAdd.TabIndex = 0;
+            inventoryAdd.TabIndex = 78;
             inventoryAdd.Text = "Add Item";
             inventoryAdd.UseVisualStyleBackColor = true;
             inventoryAdd.Click += InventoryAdd_Click;
@@ -1118,7 +1118,7 @@
             inventoryRemove.Location = new Point(189, 3);
             inventoryRemove.Name = "inventoryRemove";
             inventoryRemove.Size = new Size(87, 23);
-            inventoryRemove.TabIndex = 1;
+            inventoryRemove.TabIndex = 79;
             inventoryRemove.Text = "Remove Item";
             inventoryRemove.UseVisualStyleBackColor = true;
             inventoryRemove.Click += InventoryRemove_Click;
@@ -1130,7 +1130,7 @@
             textInventory.Name = "textInventory";
             textInventory.PlaceholderText = "Item to add...";
             textInventory.Size = new Size(87, 23);
-            textInventory.TabIndex = 2;
+            textInventory.TabIndex = 77;
             // 
             // inventoryList
             // 
@@ -1141,7 +1141,7 @@
             inventoryList.MultiColumn = true;
             inventoryList.Name = "inventoryList";
             inventoryList.Size = new Size(273, 154);
-            inventoryList.TabIndex = 1;
+            inventoryList.TabIndex = 75;
             // 
             // charactersGroup
             // 
@@ -1150,7 +1150,7 @@
             charactersGroup.Location = new Point(3, 3);
             charactersGroup.Name = "charactersGroup";
             charactersGroup.Size = new Size(194, 444);
-            charactersGroup.TabIndex = 0;
+            charactersGroup.TabIndex = 1;
             charactersGroup.TabStop = false;
             charactersGroup.Text = "Characters";
             // 
@@ -1168,7 +1168,7 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel4.Size = new Size(188, 422);
-            tableLayoutPanel4.TabIndex = 0;
+            tableLayoutPanel4.TabIndex = 2;
             // 
             // charactersList
             // 
@@ -1179,7 +1179,7 @@
             charactersList.Location = new Point(3, 3);
             charactersList.Name = "charactersList";
             charactersList.Size = new Size(182, 381);
-            charactersList.TabIndex = 0;
+            charactersList.TabIndex = 3;
             charactersList.SelectedIndexChanged += CharactersList_SelectedIndexChanged;
             // 
             // tableLayoutPanel5
@@ -1187,6 +1187,8 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel5.Controls.Add(charNew, 0, 0);
             tableLayoutPanel5.Controls.Add(charDel, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
@@ -1196,7 +1198,7 @@
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.Size = new Size(188, 35);
-            tableLayoutPanel5.TabIndex = 1;
+            tableLayoutPanel5.TabIndex = 4;
             // 
             // charNew
             // 
@@ -1204,7 +1206,7 @@
             charNew.Location = new Point(3, 3);
             charNew.Name = "charNew";
             charNew.Size = new Size(88, 29);
-            charNew.TabIndex = 0;
+            charNew.TabIndex = 5;
             charNew.Text = "New";
             charNew.UseVisualStyleBackColor = true;
             charNew.Click += CharNew_Click;
@@ -1215,7 +1217,7 @@
             charDel.Location = new Point(97, 3);
             charDel.Name = "charDel";
             charDel.Size = new Size(88, 29);
-            charDel.TabIndex = 1;
+            charDel.TabIndex = 6;
             charDel.Text = "Delete";
             charDel.UseVisualStyleBackColor = true;
             charDel.Click += CharDel_Click;
