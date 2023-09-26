@@ -558,6 +558,11 @@ namespace XenoStars_Battle
 
         private void TurnsShuffle_Click(object sender, EventArgs e)
         {
+            if(monadoArtNumber.Value < monadoArtNumber.Maximum)
+            {
+                monadoArtNumber.Value += 1;
+            }
+
             var random = new Random();
             var characters = mainSave.Characters;
             var playersList = new List<String>();

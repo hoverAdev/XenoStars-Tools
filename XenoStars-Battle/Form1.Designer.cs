@@ -2858,6 +2858,7 @@
             // 
             // damageMultiplierDynamic
             // 
+            damageMultiplierDynamic.DecimalPlaces = 2;
             damageMultiplierDynamic.Dock = DockStyle.Fill;
             damageMultiplierDynamic.Location = new Point(109, 31);
             damageMultiplierDynamic.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
