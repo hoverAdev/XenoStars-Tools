@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using Windows.Media.Playback;
+using Windows.System.Preview;
 
 namespace XenoStars_Battle
 {
@@ -44,6 +45,11 @@ namespace XenoStars_Battle
 
             var raw = File.ReadAllText(openFileDialog.FileName);
             var deserialize = JsonSerializer.Deserialize<SaveFile>(raw);
+
+            if (deserialize == null)
+            {
+                return;
+            }
 
             mainSave.Level = Convert.ToByte(deserialize.Level);
             labelLevelDynamic.Text = deserialize.Level.ToString();
@@ -438,7 +444,17 @@ namespace XenoStars_Battle
         private void OpenEnemyDialog_FileOk(object sender, CancelEventArgs e)
         {
             var raw = File.ReadAllText(openEnemyDialog.FileName);
-            enemySave = JsonSerializer.Deserialize<SaveFile>(raw);
+            var deserialize = JsonSerializer.Deserialize<SaveFile>(raw);
+
+
+            if (deserialize == null)
+            {
+                return;
+            }
+            else
+            {
+                enemySave = deserialize;
+            }
 
             var enemies = enemySave.Characters;
 
@@ -548,7 +564,8 @@ namespace XenoStars_Battle
 
                 if (attack < 0) { attack = 0; }
 
-                damageDamageDynamic.Text = Convert.ToString(attack);
+                UInt64 attackText = Convert.ToUInt64(Math.Ceiling(attack));
+                damageDamageDynamic.Text = Convert.ToString(attackText);
             }
             else
             {
@@ -558,7 +575,7 @@ namespace XenoStars_Battle
 
         private void TurnsShuffle_Click(object sender, EventArgs e)
         {
-            if(monadoArtNumber.Value < monadoArtNumber.Maximum)
+            if (monadoArtNumber.Value < monadoArtNumber.Maximum)
             {
                 monadoArtNumber.Value += 1;
             }
@@ -686,6 +703,9 @@ namespace XenoStars_Battle
             enemy3MaxHPDynamic.Text = "0";
             enemy3AttackDynamic.Text = "0";
             enemy3DefenseDynamic.Text = "0";
+
+            turnsPlayers.Text = "";
+            turnsEnemies.Text = "";
         }
 
         private short ArtClick(int index, int artIndex)
@@ -868,7 +888,7 @@ namespace XenoStars_Battle
         public UInt32 BaseHP { get; set; }
         public Byte BaseAP { get; set; }
         public UInt16 BaseDMG { get; set; }
-        public UInt16 Defense { get; set; }
+        public UInt32 Defense { get; set; }
         public String Weapon { get; set; }
         public Boolean WeaponLinearScaling { get; set; }
         public String HeadGear { get; set; }

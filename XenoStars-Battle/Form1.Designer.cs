@@ -416,8 +416,8 @@
             tableLayoutPanel13.Name = "tableLayoutPanel13";
             tableLayoutPanel13.RowCount = 3;
             tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 170F));
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 55F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 45F));
             tableLayoutPanel13.Size = new Size(129, 435);
             tableLayoutPanel13.TabIndex = 1;
             // 
@@ -842,8 +842,8 @@
             tableLayoutPanel18.Name = "tableLayoutPanel18";
             tableLayoutPanel18.RowCount = 3;
             tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Absolute, 170F));
-            tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 55F));
+            tableLayoutPanel18.RowStyles.Add(new RowStyle(SizeType.Percent, 45F));
             tableLayoutPanel18.Size = new Size(129, 435);
             tableLayoutPanel18.TabIndex = 0;
             // 
@@ -1284,8 +1284,8 @@
             tableLayoutPanel22.Name = "tableLayoutPanel22";
             tableLayoutPanel22.RowCount = 3;
             tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Absolute, 170F));
-            tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 55F));
+            tableLayoutPanel22.RowStyles.Add(new RowStyle(SizeType.Percent, 45F));
             tableLayoutPanel22.Size = new Size(132, 435);
             tableLayoutPanel22.TabIndex = 3;
             // 
@@ -1962,8 +1962,8 @@
             // tableLayoutPanel39
             // 
             tableLayoutPanel39.ColumnCount = 2;
-            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 58F));
+            tableLayoutPanel39.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel39.Controls.Add(enemy3Name, 0, 0);
             tableLayoutPanel39.Controls.Add(enemy3Level, 0, 1);
             tableLayoutPanel39.Controls.Add(enemy3HP, 0, 2);
@@ -1980,12 +1980,12 @@
             tableLayoutPanel39.Location = new Point(276, 4);
             tableLayoutPanel39.Name = "tableLayoutPanel39";
             tableLayoutPanel39.RowCount = 6;
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel39.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tableLayoutPanel39.Size = new Size(130, 136);
             tableLayoutPanel39.TabIndex = 2;
             // 
@@ -1995,7 +1995,7 @@
             enemy3Name.Dock = DockStyle.Fill;
             enemy3Name.Location = new Point(3, 0);
             enemy3Name.Name = "enemy3Name";
-            enemy3Name.Size = new Size(59, 22);
+            enemy3Name.Size = new Size(52, 22);
             enemy3Name.TabIndex = 0;
             enemy3Name.Text = "Name";
             enemy3Name.TextAlign = ContentAlignment.MiddleLeft;
@@ -2006,7 +2006,7 @@
             enemy3Level.Dock = DockStyle.Fill;
             enemy3Level.Location = new Point(3, 22);
             enemy3Level.Name = "enemy3Level";
-            enemy3Level.Size = new Size(59, 22);
+            enemy3Level.Size = new Size(52, 22);
             enemy3Level.TabIndex = 1;
             enemy3Level.Text = "Level";
             enemy3Level.TextAlign = ContentAlignment.MiddleLeft;
@@ -2017,7 +2017,7 @@
             enemy3HP.Dock = DockStyle.Fill;
             enemy3HP.Location = new Point(3, 44);
             enemy3HP.Name = "enemy3HP";
-            enemy3HP.Size = new Size(59, 22);
+            enemy3HP.Size = new Size(52, 22);
             enemy3HP.TabIndex = 2;
             enemy3HP.Text = "HP";
             enemy3HP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2028,7 +2028,7 @@
             enemy3MaxHP.Dock = DockStyle.Fill;
             enemy3MaxHP.Location = new Point(3, 66);
             enemy3MaxHP.Name = "enemy3MaxHP";
-            enemy3MaxHP.Size = new Size(59, 22);
+            enemy3MaxHP.Size = new Size(52, 22);
             enemy3MaxHP.TabIndex = 3;
             enemy3MaxHP.Text = "Max HP";
             enemy3MaxHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2039,7 +2039,7 @@
             enemy3Attack.Dock = DockStyle.Fill;
             enemy3Attack.Location = new Point(3, 88);
             enemy3Attack.Name = "enemy3Attack";
-            enemy3Attack.Size = new Size(59, 22);
+            enemy3Attack.Size = new Size(52, 22);
             enemy3Attack.TabIndex = 4;
             enemy3Attack.Text = "Attack";
             enemy3Attack.TextAlign = ContentAlignment.MiddleLeft;
@@ -2050,7 +2050,7 @@
             enemy3Defense.Dock = DockStyle.Fill;
             enemy3Defense.Location = new Point(3, 110);
             enemy3Defense.Name = "enemy3Defense";
-            enemy3Defense.Size = new Size(59, 26);
+            enemy3Defense.Size = new Size(52, 26);
             enemy3Defense.TabIndex = 5;
             enemy3Defense.Text = "Defense";
             enemy3Defense.TextAlign = ContentAlignment.MiddleLeft;
@@ -2058,20 +2058,20 @@
             // enemy3HPDynamic
             // 
             enemy3HPDynamic.Dock = DockStyle.Fill;
-            enemy3HPDynamic.Location = new Point(68, 44);
+            enemy3HPDynamic.Location = new Point(61, 44);
             enemy3HPDynamic.Margin = new Padding(3, 0, 3, 0);
             enemy3HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             enemy3HPDynamic.Name = "enemy3HPDynamic";
-            enemy3HPDynamic.Size = new Size(59, 23);
+            enemy3HPDynamic.Size = new Size(66, 23);
             enemy3HPDynamic.TabIndex = 26;
             // 
             // enemy3NameDynamic
             // 
             enemy3NameDynamic.AutoSize = true;
             enemy3NameDynamic.Dock = DockStyle.Fill;
-            enemy3NameDynamic.Location = new Point(68, 0);
+            enemy3NameDynamic.Location = new Point(61, 0);
             enemy3NameDynamic.Name = "enemy3NameDynamic";
-            enemy3NameDynamic.Size = new Size(59, 22);
+            enemy3NameDynamic.Size = new Size(66, 22);
             enemy3NameDynamic.TabIndex = 7;
             enemy3NameDynamic.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -2079,9 +2079,9 @@
             // 
             enemy3LevelDynamic.AutoSize = true;
             enemy3LevelDynamic.Dock = DockStyle.Fill;
-            enemy3LevelDynamic.Location = new Point(68, 22);
+            enemy3LevelDynamic.Location = new Point(61, 22);
             enemy3LevelDynamic.Name = "enemy3LevelDynamic";
-            enemy3LevelDynamic.Size = new Size(59, 22);
+            enemy3LevelDynamic.Size = new Size(66, 22);
             enemy3LevelDynamic.TabIndex = 8;
             enemy3LevelDynamic.Text = "1";
             enemy3LevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2090,9 +2090,9 @@
             // 
             enemy3MaxHPDynamic.AutoSize = true;
             enemy3MaxHPDynamic.Dock = DockStyle.Fill;
-            enemy3MaxHPDynamic.Location = new Point(68, 66);
+            enemy3MaxHPDynamic.Location = new Point(61, 66);
             enemy3MaxHPDynamic.Name = "enemy3MaxHPDynamic";
-            enemy3MaxHPDynamic.Size = new Size(59, 22);
+            enemy3MaxHPDynamic.Size = new Size(66, 22);
             enemy3MaxHPDynamic.TabIndex = 9;
             enemy3MaxHPDynamic.Text = "0";
             enemy3MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2101,9 +2101,9 @@
             // 
             enemy3AttackDynamic.AutoSize = true;
             enemy3AttackDynamic.Dock = DockStyle.Fill;
-            enemy3AttackDynamic.Location = new Point(68, 88);
+            enemy3AttackDynamic.Location = new Point(61, 88);
             enemy3AttackDynamic.Name = "enemy3AttackDynamic";
-            enemy3AttackDynamic.Size = new Size(59, 22);
+            enemy3AttackDynamic.Size = new Size(66, 22);
             enemy3AttackDynamic.TabIndex = 10;
             enemy3AttackDynamic.Text = "0";
             enemy3AttackDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2112,9 +2112,9 @@
             // 
             enemy3DefenseDynamic.AutoSize = true;
             enemy3DefenseDynamic.Dock = DockStyle.Fill;
-            enemy3DefenseDynamic.Location = new Point(68, 110);
+            enemy3DefenseDynamic.Location = new Point(61, 110);
             enemy3DefenseDynamic.Name = "enemy3DefenseDynamic";
-            enemy3DefenseDynamic.Size = new Size(59, 26);
+            enemy3DefenseDynamic.Size = new Size(66, 26);
             enemy3DefenseDynamic.TabIndex = 11;
             enemy3DefenseDynamic.Text = "0";
             enemy3DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2122,8 +2122,8 @@
             // tableLayoutPanel37
             // 
             tableLayoutPanel37.ColumnCount = 2;
-            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 58F));
+            tableLayoutPanel37.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel37.Controls.Add(enemy2Name, 0, 0);
             tableLayoutPanel37.Controls.Add(enemy2Level, 0, 1);
             tableLayoutPanel37.Controls.Add(enemy2HP, 0, 2);
@@ -2140,13 +2140,12 @@
             tableLayoutPanel37.Location = new Point(140, 4);
             tableLayoutPanel37.Name = "tableLayoutPanel37";
             tableLayoutPanel37.RowCount = 6;
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
+            tableLayoutPanel37.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tableLayoutPanel37.Size = new Size(129, 136);
             tableLayoutPanel37.TabIndex = 1;
             // 
@@ -2156,7 +2155,7 @@
             enemy2Name.Dock = DockStyle.Fill;
             enemy2Name.Location = new Point(3, 0);
             enemy2Name.Name = "enemy2Name";
-            enemy2Name.Size = new Size(58, 22);
+            enemy2Name.Size = new Size(52, 22);
             enemy2Name.TabIndex = 0;
             enemy2Name.Text = "Name";
             enemy2Name.TextAlign = ContentAlignment.MiddleLeft;
@@ -2167,7 +2166,7 @@
             enemy2Level.Dock = DockStyle.Fill;
             enemy2Level.Location = new Point(3, 22);
             enemy2Level.Name = "enemy2Level";
-            enemy2Level.Size = new Size(58, 22);
+            enemy2Level.Size = new Size(52, 22);
             enemy2Level.TabIndex = 1;
             enemy2Level.Text = "Level";
             enemy2Level.TextAlign = ContentAlignment.MiddleLeft;
@@ -2178,7 +2177,7 @@
             enemy2HP.Dock = DockStyle.Fill;
             enemy2HP.Location = new Point(3, 44);
             enemy2HP.Name = "enemy2HP";
-            enemy2HP.Size = new Size(58, 22);
+            enemy2HP.Size = new Size(52, 22);
             enemy2HP.TabIndex = 2;
             enemy2HP.Text = "HP";
             enemy2HP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2189,7 +2188,7 @@
             enemy2MaxHP.Dock = DockStyle.Fill;
             enemy2MaxHP.Location = new Point(3, 66);
             enemy2MaxHP.Name = "enemy2MaxHP";
-            enemy2MaxHP.Size = new Size(58, 22);
+            enemy2MaxHP.Size = new Size(52, 22);
             enemy2MaxHP.TabIndex = 3;
             enemy2MaxHP.Text = "Max HP";
             enemy2MaxHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2200,7 +2199,7 @@
             enemy2Attack.Dock = DockStyle.Fill;
             enemy2Attack.Location = new Point(3, 88);
             enemy2Attack.Name = "enemy2Attack";
-            enemy2Attack.Size = new Size(58, 22);
+            enemy2Attack.Size = new Size(52, 22);
             enemy2Attack.TabIndex = 4;
             enemy2Attack.Text = "Attack";
             enemy2Attack.TextAlign = ContentAlignment.MiddleLeft;
@@ -2211,7 +2210,7 @@
             enemy2Defense.Dock = DockStyle.Fill;
             enemy2Defense.Location = new Point(3, 110);
             enemy2Defense.Name = "enemy2Defense";
-            enemy2Defense.Size = new Size(58, 26);
+            enemy2Defense.Size = new Size(52, 26);
             enemy2Defense.TabIndex = 5;
             enemy2Defense.Text = "Defense";
             enemy2Defense.TextAlign = ContentAlignment.MiddleLeft;
@@ -2219,20 +2218,20 @@
             // enemy2HPDynamic
             // 
             enemy2HPDynamic.Dock = DockStyle.Fill;
-            enemy2HPDynamic.Location = new Point(67, 44);
+            enemy2HPDynamic.Location = new Point(61, 44);
             enemy2HPDynamic.Margin = new Padding(3, 0, 3, 0);
             enemy2HPDynamic.Maximum = new decimal(new int[] { 0, 0, 0, 0 });
             enemy2HPDynamic.Name = "enemy2HPDynamic";
-            enemy2HPDynamic.Size = new Size(59, 23);
+            enemy2HPDynamic.Size = new Size(65, 23);
             enemy2HPDynamic.TabIndex = 25;
             // 
             // enemy2NameDynamic
             // 
             enemy2NameDynamic.AutoSize = true;
             enemy2NameDynamic.Dock = DockStyle.Fill;
-            enemy2NameDynamic.Location = new Point(67, 0);
+            enemy2NameDynamic.Location = new Point(61, 0);
             enemy2NameDynamic.Name = "enemy2NameDynamic";
-            enemy2NameDynamic.Size = new Size(59, 22);
+            enemy2NameDynamic.Size = new Size(65, 22);
             enemy2NameDynamic.TabIndex = 7;
             enemy2NameDynamic.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -2240,9 +2239,9 @@
             // 
             enemy2LevelDynamic.AutoSize = true;
             enemy2LevelDynamic.Dock = DockStyle.Fill;
-            enemy2LevelDynamic.Location = new Point(67, 22);
+            enemy2LevelDynamic.Location = new Point(61, 22);
             enemy2LevelDynamic.Name = "enemy2LevelDynamic";
-            enemy2LevelDynamic.Size = new Size(59, 22);
+            enemy2LevelDynamic.Size = new Size(65, 22);
             enemy2LevelDynamic.TabIndex = 8;
             enemy2LevelDynamic.Text = "1";
             enemy2LevelDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2251,9 +2250,9 @@
             // 
             enemy2MaxHPDynamic.AutoSize = true;
             enemy2MaxHPDynamic.Dock = DockStyle.Fill;
-            enemy2MaxHPDynamic.Location = new Point(67, 66);
+            enemy2MaxHPDynamic.Location = new Point(61, 66);
             enemy2MaxHPDynamic.Name = "enemy2MaxHPDynamic";
-            enemy2MaxHPDynamic.Size = new Size(59, 22);
+            enemy2MaxHPDynamic.Size = new Size(65, 22);
             enemy2MaxHPDynamic.TabIndex = 9;
             enemy2MaxHPDynamic.Text = "0";
             enemy2MaxHPDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2262,9 +2261,9 @@
             // 
             enemy2AttackDynamic.AutoSize = true;
             enemy2AttackDynamic.Dock = DockStyle.Fill;
-            enemy2AttackDynamic.Location = new Point(67, 88);
+            enemy2AttackDynamic.Location = new Point(61, 88);
             enemy2AttackDynamic.Name = "enemy2AttackDynamic";
-            enemy2AttackDynamic.Size = new Size(59, 22);
+            enemy2AttackDynamic.Size = new Size(65, 22);
             enemy2AttackDynamic.TabIndex = 10;
             enemy2AttackDynamic.Text = "0";
             enemy2AttackDynamic.TextAlign = ContentAlignment.MiddleLeft;
@@ -2273,9 +2272,9 @@
             // 
             enemy2DefenseDynamic.AutoSize = true;
             enemy2DefenseDynamic.Dock = DockStyle.Fill;
-            enemy2DefenseDynamic.Location = new Point(67, 110);
+            enemy2DefenseDynamic.Location = new Point(61, 110);
             enemy2DefenseDynamic.Name = "enemy2DefenseDynamic";
-            enemy2DefenseDynamic.Size = new Size(59, 26);
+            enemy2DefenseDynamic.Size = new Size(65, 26);
             enemy2DefenseDynamic.TabIndex = 11;
             enemy2DefenseDynamic.Text = "0";
             enemy2DefenseDynamic.TextAlign = ContentAlignment.MiddleLeft;

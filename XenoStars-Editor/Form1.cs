@@ -61,6 +61,11 @@ namespace XenoStars_Editor
             var raw = File.ReadAllText(openFileDialog.FileName);
             var deserialize = JsonSerializer.Deserialize<SaveFile>(raw);
 
+            if (deserialize == null)
+            {
+                return;
+            }
+
             mainSave.Level = deserialize.Level;
             textLevel.Value = deserialize.Level;
 
@@ -213,9 +218,9 @@ namespace XenoStars_Editor
                 textName.Text = currentChar.Name;
                 textPlayer.Text = currentChar.Player;
                 checkType.Checked = currentChar.EtherType;
-                textHP.Value = currentChar.BaseHP;
+                textHP.Value = Convert.ToUInt16(currentChar.BaseHP);
                 textAP.Value = currentChar.BaseAP;
-                textDamage.Value = currentChar.BaseDMG;
+                textDamage.Value = Convert.ToUInt16(currentChar.BaseDMG);
                 checkLinear.Checked = currentChar.WeaponLinearScaling;
                 textDefense.Value = currentChar.Defense;
 
@@ -429,7 +434,7 @@ namespace XenoStars_Editor
         public UInt32 BaseHP { get; set; }
         public Byte BaseAP { get; set; }
         public UInt16 BaseDMG { get; set; }
-        public UInt16 Defense { get; set; }
+        public UInt32 Defense { get; set; }
         public String Weapon { get; set; }
         public Boolean WeaponLinearScaling { get; set; }
         public String HeadGear { get; set; }
